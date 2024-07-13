@@ -26,7 +26,6 @@ jobs:
           start: npm run preview
           wait-on: "http://localhost:3000"
           browser: chrome
-          component: true
 
       - name: Upload test results
         uses: actions/upload-artifact@v4

@@ -6,10 +6,11 @@ module.exports = {
     "plugin:@typescript-eslint/recommended",
     "plugin:react-hooks/recommended",
     "plugin:jsx-a11y/recommended",
+    "plugin:cypress/recommended",
   ],
   ignorePatterns: ["dist", ".eslintrc.cjs"],
   parser: "@typescript-eslint/parser",
-  plugins: ["react-refresh", "jsx-a11y"],
+  plugins: ["react-refresh", "jsx-a11y", "cypress"],
   rules: {
     "react-refresh/only-export-components": [
       "warn",
