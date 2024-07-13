@@ -28,12 +28,12 @@ const Header = () => {
   return (
     <header
       className={clsx(
-        "transform transition-all duration-500 sticky top-0 z-50 bg-secondary",
-        isScrolled ? "py-8 md:py-8 shadow-md" : "py-12 md:py-14"
+        "flex items-center h-[100px] bg-secondary sticky top-[-30px] z-50",
+        isScrolled && "shadow-lg"
       )}
       ref={headerRef}
     >
-      <div className="container mx-auto px-4 flex items-center justify-between">
+      <div className="container mx-auto  h-[70px] sticky top-0 flex items-center justify-between gap-8">
         <a href={routerPaths.home}>
           <img
             className={clsx(
