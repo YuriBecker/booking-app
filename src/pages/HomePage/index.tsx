@@ -18,7 +18,7 @@ import { useForm } from "react-hook-form";
 import Lottie from "react-lottie";
 import { createSearchParams, useNavigate } from "react-router-dom";
 import { z } from "zod";
-import animationData from "../../../public/vacation.json";
+import animationData from "public/vacation.json";
 
 const formSchema = z
   .object({

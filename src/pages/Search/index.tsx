@@ -1,3 +1,6 @@
+import PropertyCard from "@/components/property-card";
+import { Loader } from "@/components/ui/loader";
+import NoData from "@/components/ui/no-data";
 import {
   Pagination,
   PaginationContent,
@@ -7,10 +10,13 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination";
-import { useGetPropertiesQuery } from "@/services/apiService";
+import routerPaths from "@/router/paths";
+import { useGetPropertiesQuery } from "@/services/api-service";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const SearchPage = () => {
+  const navigate = useNavigate();
   const [page, setPage] = useState(1);
 
   const { isLoading, data, error, isSuccess } = useGetPropertiesQuery({
@@ -22,34 +28,32 @@ const SearchPage = () => {
   const isFirstPage = page === data?.first;
   const isLastPage = page === data?.last;
 
-  console.log({
-    isLoading,
-    data,
-    error,
-    isSuccess,
-  });
+  const showNoResults = !isLoading && isSuccess && list.length === 0;
 
-  if (isLoading) return;
+  if (isLoading) {
+    return <Loader fixed />;
+  }
+
+  if (showNoResults || error) {
+    return (
+      <NoData
+        className="bg-background container"
+        buttonLabel="Search again"
+        onClick={() => navigate(routerPaths.home)}
+      />
+    );
+  }
 
   if (isSuccess) {
     return (
-      <div className="container mx-auto px-8">
+      <div className="container mx-auto px-8 mt-10 lg:mt-14">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {list?.map((property) => (
-            <div key={property.id}>
-              <div>{property.title}</div>
-              <div>{property.description}</div>
-              <div className="overflow-hidden rounded-sm">
-                <img
-                  className="object-cover aspect-square w-full transform transition-all duration-200 hover:scale-105"
-                  src={property.images[0]}
-                  alt={property.title}
-                  loading="lazy"
-                  width={424}
-                  height={424}
-                />
-              </div>
-            </div>
+            <PropertyCard
+              key={property.id}
+              property={property}
+              onClick={() => {}}
+            />
           ))}
         </div>
 

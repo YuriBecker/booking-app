@@ -10,7 +10,7 @@ type Props = {
   onClick: (property: Property) => void;
 };
 
-const BookCard = ({ property, onClick }: Props) => {
+const PropertyCard = ({ property, onClick }: Props) => {
   return (
     <Card className="w-full max-w-sm overflow-hidden mx-auto flex flex-col justify-between">
       <CardHeader className="p-0">
@@ -99,4 +99,4 @@ const BookCard = ({ property, onClick }: Props) => {
   );
 };
 
-export default BookCard;
+export default PropertyCard;
