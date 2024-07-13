@@ -26,7 +26,8 @@
     /* Path alises */
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "public": ["./public"]
     },
 
     // Add types to global scope
