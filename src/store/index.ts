@@ -11,7 +11,8 @@ import {
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import bookingsReducer from "./slices/bookings";
-import { apiService } from "@/services/apiService";
+import { apiService } from "@/services/api-service";
+import { rtkQueryErrorLogger } from "@/services/api-error-handler";
 import { setupListeners } from "@reduxjs/toolkit/query";
 
 const persistConfig = {
@@ -34,7 +35,7 @@ export const store = configureStore({
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
-    }).concat(apiService.middleware),
+    }).concat(apiService.middleware, rtkQueryErrorLogger),
 });
 
 setupListeners(store.dispatch);

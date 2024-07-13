@@ -17,8 +17,11 @@ export const apiService = createApi({
   endpoints: (builder) => ({
     getProperties: builder.query<PaginatedData<Property[]>, GetPropertiesQuery>(
       {
-        query: ({ page, sort = "-reviews.totalScore,-reviews.reviewsCount" }) => ({
-          url: "properties",
+        query: ({
+          page,
+          sort = "-reviews.totalScore,-reviews.reviewsCount",
+        }) => ({
+          url: "propertiess",
           params: {
             _page: page,
             _per_page: PROPERTIES_PER_PAGE,
