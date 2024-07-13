@@ -27,7 +27,10 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+
+    // Add types to global scope
+    "types": ["cypress"]
   },
   "include": ["src"]
 }
