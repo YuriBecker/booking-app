@@ -1,4 +1,3 @@
-import { Loader } from "@/components/ui/loader";
 import {
   Pagination,
   PaginationContent,
@@ -34,7 +33,7 @@ const SearchPage = () => {
 
   if (isSuccess) {
     return (
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {list?.map((property) => (
             <div key={property.id}>
@@ -45,6 +44,9 @@ const SearchPage = () => {
                   className="object-cover aspect-square w-full transform transition-all duration-200 hover:scale-105"
                   src={property.images[0]}
                   alt={property.title}
+                  loading="lazy"
+                  width={424}
+                  height={424}
                 />
               </div>
             </div>
