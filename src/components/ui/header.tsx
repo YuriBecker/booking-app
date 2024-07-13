@@ -1,8 +1,8 @@
 import routerPaths from "@/router/paths";
-import clsx from "clsx";
+import { cn } from "@/utils/tailwind";
+import { House } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { Button } from "./button";
-import { House } from "lucide-react";
 
 const Header = () => {
   const headerRef = useRef<HTMLHeadingElement>(null);
@@ -27,7 +27,7 @@ const Header = () => {
 
   return (
     <header
-      className={clsx(
+      className={cn(
         "flex items-center h-[100px] bg-secondary sticky top-[-30px] z-50",
         isScrolled && "shadow-lg"
       )}
@@ -36,9 +36,9 @@ const Header = () => {
       <div className="container mx-auto  h-[70px] sticky top-0 flex items-center justify-between gap-8">
         <a href={routerPaths.home}>
           <img
-            className={clsx(
+            className={cn(
               "w-full h-10 md:h-14 transform transition-all duration-200 hover:scale-105",
-              isScrolled ? "h-10" : "h-12"
+              isScrolled ? "h-8 md:h-10" : "h-12"
             )}
             src="/logo.svg"
             alt="hostfully"

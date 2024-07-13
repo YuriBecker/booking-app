@@ -1,7 +1,7 @@
 import Lottie from "react-lottie";
-import animationData from "../../../public/loader-animation.json";
+import animationData from "public/loader-animation.json";
 
-type Props = React.SVGProps<SVGSVGElement> & {
+type Props = {
   size?: number;
   className?: string;
   fixed?: boolean;
@@ -23,7 +23,12 @@ export const Loader = ({ size = 120, fixed }: Props) => {
 
   return (
     <div className={containerClass}>
-      <Lottie options={defaultOptions} height={size} width={size} />
+      <Lottie
+        options={defaultOptions}
+        height={size}
+        width={size}
+        isClickToPauseDisabled
+      />
     </div>
   );
 };
