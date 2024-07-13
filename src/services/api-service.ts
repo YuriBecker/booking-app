@@ -21,7 +21,7 @@ export const apiService = createApi({
           page,
           sort = "-reviews.totalScore,-reviews.reviewsCount",
         }) => ({
-          url: "propertiess",
+          url: "properties",
           params: {
             _page: page,
             _per_page: PROPERTIES_PER_PAGE,
