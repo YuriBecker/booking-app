@@ -1,13 +1,21 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { Provider } from "react-redux";
 import { RouterProvider } from "react-router-dom";
-import router from "./router/index.tsx";
 import { Loader } from "./components/ui/loader.tsx";
-
+import router from "./router/index.tsx";
+import { persistor, store } from "./store";
+import { PersistGate } from "redux-persist/integration/react";
 import "./styles/global.css";
+import Header from "./components/ui/header.tsx";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <RouterProvider router={router} fallbackElement={<Loader fixed />} />
+    <Provider store={store}>
+      <PersistGate loading={<Loader fixed />} persistor={persistor}>
+        <Header />
+        <RouterProvider router={router} fallbackElement={<Loader fixed />} />
+      </PersistGate>
+    </Provider>
   </React.StrictMode>
 );

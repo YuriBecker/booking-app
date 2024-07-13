@@ -1,9 +1,5 @@
 const HomePage = () => {
-  return (
-    <div>
-      <h1>Home Page</h1>
-    </div>
-  );
+  return <div className="container mx-auto px-4"></div>;
 };
 
 export default HomePage;
