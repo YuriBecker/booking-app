@@ -31,7 +31,7 @@
     },
 
     // Add types to global scope
-    "types": ["cypress"]
+    "types": ["vitest/globals", "@testing-library/jest-dom", "cypress"]
   },
-  "include": ["src"]
+  "include": ["src", " setupTests.ts"]
 }
