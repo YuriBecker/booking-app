@@ -4,25 +4,21 @@ import { BathIcon, BedDoubleIcon, BedIcon, StarIcon } from "lucide-react";
 import { formatCurrency } from "@/utils/formatters";
 import { cn } from "@/utils/tailwind";
 import BookDrawer from "./book-drawer";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import useBookingReservation from "@/hooks/useBookingReservation";
 import { toast } from "sonner";
 import routerPaths from "@/router/paths";
+import { Booking } from "@/models/booking";
 
 type Props = {
   property: Property;
+  checkIn: Booking["checkIn"];
+  checkOut: Booking["checkOut"];
 };
 
-const PropertyCard = ({ property }: Props) => {
-  const [searchParams] = useSearchParams();
+const PropertyCard = ({ property, checkIn, checkOut }: Props) => {
   const { handleAddBooking } = useBookingReservation();
   const navigate = useNavigate();
-
-  // const city = searchParams.get("city") || "all";
-  const checkIn = searchParams.get("checkIn") || new Date().toISOString();
-  const checkOut = searchParams.get("checkOut") || new Date().toISOString();
-  // const numOfAdults = Number(searchParams.get("numOfAdults"));
-  // const numOfChildren = Number(searchParams.get("numOfChildren"));
 
   const handleBookClick = (id: Property["id"]) => {
     try {
@@ -47,7 +43,7 @@ const PropertyCard = ({ property }: Props) => {
   };
 
   return (
-    <Card className="w-full max-w-sm overflow-hidden mx-auto flex flex-col justify-between">
+    <Card className="w-full max-w-md overflow-hidden flex flex-col justify-between">
       <CardHeader className="p-0">
         <img
           className="object-cover w-full transform duration-200 hover:scale-105 rounded-t-lg aspect-[3/2] transition-all"
@@ -103,7 +99,7 @@ const PropertyCard = ({ property }: Props) => {
           </div>
         </div>
 
-        <div className="flex items-left gap-4 text-sm text-muted-foreground flex-col md:items-center md:flex-row">
+        <div className="flex items-left gap-4 text-sm text-muted-foreground flex-col md:items-center md:flex-row justify-between">
           <div className="flex items-center gap-2">
             <BedIcon className="w-5 h-5" />
             <span>{property.numberOfBedrooms} Bedrooms</span>

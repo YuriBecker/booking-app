@@ -52,7 +52,7 @@ const Header = () => {
 
         <div className="relative inline-flex">
           <Link to={routerPaths.myBookings}>
-            <Button variant="default">
+            <Button variant="default" size="sm">
               <House className="mr-2" /> My Bookings
             </Button>
           </Link>

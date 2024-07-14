@@ -12,40 +12,13 @@ import {
 import { Input } from "@/components/ui/input";
 import routerPaths from "@/router/paths";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { addDays } from "date-fns";
 import { Search } from "lucide-react";
 import { useForm } from "react-hook-form";
 import Lottie from "react-lottie";
 import { createSearchParams, useNavigate } from "react-router-dom";
 import { z } from "zod";
 import animationData from "public/vacation.json";
-
-const formSchema = z
-  .object({
-    city: z.string().optional(),
-    checkIn: z.date().optional(),
-    checkOut: z.date().optional(),
-    numOfAdults: z.coerce.number(),
-    numOfChildren: z.coerce.number(),
-  })
-  .superRefine(({ checkIn, checkOut }, ctx) => {
-    if (checkIn && checkOut && checkIn > checkOut) {
-      ctx.addIssue({
-        code: "custom",
-        message: "Check out must be after check in",
-        path: ["checkOut"],
-      });
-    }
-  })
-  .superRefine(({ numOfChildren, numOfAdults }, ctx) => {
-    if (numOfChildren && numOfAdults < 1) {
-      ctx.addIssue({
-        code: "custom",
-        message: "Children must be accompanied by an adult",
-        path: ["numOfAdults"],
-      });
-    }
-  });
+import { searchFormSchema } from "./form-schema";
 
 const cityOptions = [
   {
@@ -69,17 +42,15 @@ const cityOptions = [
 const HomePage = () => {
   const navigate = useNavigate();
 
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
+  const form = useForm<z.infer<typeof searchFormSchema>>({
+    resolver: zodResolver(searchFormSchema),
     defaultValues: {
       numOfAdults: 1,
       numOfChildren: 0,
-      checkIn: addDays(new Date(), 1),
-      checkOut: addDays(new Date(), 8),
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
+  function onSubmit(values: z.infer<typeof searchFormSchema>) {
     navigate({
       pathname: routerPaths.search,
       search: createSearchParams({

@@ -37,9 +37,9 @@ const BookDrawer = ({
   handleBookProperty,
 }: Props) => {
   return (
-    <Drawer closeThreshold={0.8}>
+    <Drawer>
       <DrawerTrigger asChild>
-        <Button size="lg" className="w-full hover:bg-secondary mt-auto">
+        <Button size="lg" className="w-full hover:bg-secondary">
           Book Now
         </Button>
       </DrawerTrigger>
