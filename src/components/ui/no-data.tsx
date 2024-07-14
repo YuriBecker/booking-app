@@ -8,6 +8,7 @@ type Props = {
   className?: string;
   onClick?: () => void;
   buttonLabel?: string;
+  description: string;
 };
 
 const defaultOptions = {
@@ -19,7 +20,13 @@ const defaultOptions = {
   },
 };
 
-const NoData = ({ size, className, onClick, buttonLabel }: Props) => {
+const NoData = ({
+  size,
+  className,
+  onClick,
+  buttonLabel,
+  description,
+}: Props) => {
   return (
     <div
       className={cn(
@@ -28,7 +35,7 @@ const NoData = ({ size, className, onClick, buttonLabel }: Props) => {
       )}
     >
       <h1 className="text-3xl font-bold text-secondary text-center">
-        Sorry, we couldn't find any available property
+        {description}
       </h1>
 
       <div className="pointer-events-none">

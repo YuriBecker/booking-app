@@ -1,16 +1,51 @@
 import { Property } from "@/models/property";
 import { Card, CardContent, CardFooter, CardHeader } from "./ui/card";
 import { BathIcon, BedDoubleIcon, BedIcon, StarIcon } from "lucide-react";
-import { Button } from "./ui/button";
 import { formatCurrency } from "@/utils/formatters";
 import { cn } from "@/utils/tailwind";
+import BookDrawer from "./book-drawer";
+import { useNavigate, useSearchParams } from "react-router-dom";
+import useBookingReservation from "@/hooks/useBookingReservation";
+import { toast } from "sonner";
+import routerPaths from "@/router/paths";
 
 type Props = {
   property: Property;
-  onClick: (property: Property) => void;
 };
 
-const PropertyCard = ({ property, onClick }: Props) => {
+const PropertyCard = ({ property }: Props) => {
+  const [searchParams] = useSearchParams();
+  const { handleAddBooking } = useBookingReservation();
+  const navigate = useNavigate();
+
+  // const city = searchParams.get("city") || "all";
+  const checkIn = searchParams.get("checkIn") || new Date().toISOString();
+  const checkOut = searchParams.get("checkOut") || new Date().toISOString();
+  // const numOfAdults = Number(searchParams.get("numOfAdults"));
+  // const numOfChildren = Number(searchParams.get("numOfChildren"));
+
+  const handleBookClick = (id: Property["id"]) => {
+    try {
+      const price = Number(
+        property.price.hasPromotion
+          ? property.price.promotionalPricePerNight
+          : property.price.perNight
+      );
+
+      handleAddBooking(id, checkIn, checkOut, price);
+
+      toast.success("Property booked successfully");
+
+      navigate(routerPaths.myBookings);
+    } catch (error) {
+      const message =
+        (error as Error).message ||
+        "An error occurred while booking the property";
+
+      toast.error(message);
+    }
+  };
+
   return (
     <Card className="w-full max-w-sm overflow-hidden mx-auto flex flex-col justify-between">
       <CardHeader className="p-0">
@@ -85,15 +120,12 @@ const PropertyCard = ({ property, onClick }: Props) => {
       </CardContent>
 
       <CardFooter>
-        <Button
-          size="lg"
-          className="w-full hover:bg-secondary mt-auto"
-          onClick={() => {
-            onClick(property);
-          }}
-        >
-          Book Now
-        </Button>
+        <BookDrawer
+          property={property}
+          checkInDate={checkIn}
+          checkOutDate={checkOut}
+          handleBookProperty={() => handleBookClick(property.id)}
+        />
       </CardFooter>
     </Card>
   );

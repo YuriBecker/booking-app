@@ -49,7 +49,7 @@ export function SelectField({
         >
           <div className="flex flex-row items-center">
             <Search width={16} className="mr-2" />
-            {value
+            {options.find((city) => city.value === value)
               ? options.find((city) => city.value === value)?.label
               : placeholder}
           </div>
