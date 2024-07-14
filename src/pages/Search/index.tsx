@@ -1,34 +1,14 @@
 import PropertyCard from "@/components/property-card";
 import { Loader } from "@/components/ui/loader";
 import NoData from "@/components/ui/no-data";
-import {
-  Pagination,
-  PaginationContent,
-  PaginationEllipsis,
-  PaginationItem,
-  PaginationLink,
-  PaginationNext,
-  PaginationPrevious,
-} from "@/components/ui/pagination";
 import routerPaths from "@/router/paths";
-import { useGetPropertiesQuery } from "@/services/api-service";
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import useSearch from "./hooks/useSearch";
 
 const SearchPage = () => {
   const navigate = useNavigate();
-  const [page, setPage] = useState(1);
-
-  const { isLoading, data, error, isSuccess } = useGetPropertiesQuery({
-    page,
-  });
-
-  const list = data?.data || [];
-  const last = data?.last;
-  const isFirstPage = page === data?.first;
-  const isLastPage = page === data?.last;
-
-  const showNoResults = !isLoading && isSuccess && list.length === 0;
+  const { isLoading, isSuccess, error, availableProperties, showNoResults } =
+    useSearch();
 
   if (isLoading) {
     return <Loader fixed />;
@@ -40,90 +20,19 @@ const SearchPage = () => {
         className="bg-background container"
         buttonLabel="Search again"
         onClick={() => navigate(routerPaths.home)}
+        description="Sorry, we couldn't find any available property"
       />
     );
   }
 
   if (isSuccess) {
     return (
-      <div className="container mx-auto px-8 mt-10 lg:mt-14">
+      <div className="container mx-auto px-8 mt-10 lg:mt-14 pb-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {list?.map((property) => (
-            <PropertyCard
-              key={property.id}
-              property={property}
-              onClick={() => {}}
-            />
+          {availableProperties?.map((property) => (
+            <PropertyCard key={property.id} property={property} />
           ))}
         </div>
-
-        <Pagination className="my-6">
-          <PaginationContent>
-            <PaginationItem>
-              <PaginationPrevious
-                className={isFirstPage ? "pointer-events-none opacity-50" : ""}
-                aria-disabled={isFirstPage}
-                onClick={() => {
-                  if (isFirstPage) return;
-
-                  setPage(page - 1);
-                }}
-                href="#"
-              />
-            </PaginationItem>
-
-            {Array.from({ length: last as number }, (_, index) => {
-              if (
-                index + 1 === data?.first ||
-                index + 1 === page ||
-                index + 1 === page - 1 ||
-                index + 1 === page + 1 ||
-                index + 1 === data?.last
-              ) {
-                return (
-                  <PaginationItem key={index}>
-                    <PaginationLink
-                      href="#"
-                      onClick={() => {
-                        setPage(index + 1);
-                      }}
-                      className={
-                        index + 1 === page
-                          ? "bg-secondary text-secondary-foreground hover:bg-secondary hover:opacity-90"
-                          : ""
-                      }
-                    >
-                      {index + 1}
-                    </PaginationLink>
-                  </PaginationItem>
-                );
-              } else if (index + 1 === page - 2 || index + 1 === page + 2) {
-                return (
-                  <PaginationItem key={index}>
-                    <PaginationEllipsis />
-                  </PaginationItem>
-                );
-              } else {
-                return null;
-              }
-            })}
-
-            <PaginationItem>
-              <PaginationNext
-                className={isLastPage ? "pointer-events-none opacity-50" : ""}
-                onClick={() => {
-                  if (isLastPage) return;
-
-                  setPage(page + 1);
-                }}
-                aria-disabled={isLastPage}
-                href="#"
-              >
-                {last}
-              </PaginationNext>
-            </PaginationItem>
-          </PaginationContent>
-        </Pagination>
       </div>
     );
   }
