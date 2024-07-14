@@ -8,7 +8,7 @@ import {
 import { removeTimeFromDate } from "@/utils/dates";
 import { useDispatch, useSelector } from "react-redux";
 
-const useBookingReservation = () => {
+const useBookingHandlers = () => {
   const dispatch = useDispatch();
 
   const allBookings =
@@ -112,4 +112,4 @@ const useBookingReservation = () => {
   };
 };
 
-export default useBookingReservation;
+export default useBookingHandlers;

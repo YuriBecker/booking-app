@@ -8,14 +8,14 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import NoData from "@/components/ui/no-data";
-import useBookingReservation from "@/hooks/useBookingReservation";
+import useBookingHandlers from "@/hooks/useBookingHandlers";
 import routerPaths from "@/router/paths";
 
 import { Link, useNavigate } from "react-router-dom";
 
 const BookingsPage = () => {
   const navigate = useNavigate();
-  const { bookings } = useBookingReservation();
+  const { bookings } = useBookingHandlers();
 
   const showNoResults = bookings.length === 0;
 

@@ -1,4 +1,4 @@
-import useBookingReservation from "@/hooks/useBookingReservation";
+import useBookingHandlers from "@/hooks/useBookingHandlers";
 import { Booking } from "@/models/booking";
 import { useGetPropertyQuery } from "@/services/api-service";
 import { formatCurrency, formatDate } from "@/utils/formatters";
@@ -175,7 +175,7 @@ type Props = {
 
 const BookCard = ({ booking }: Props) => {
   const { data: property } = useGetPropertyQuery(booking.propertyId);
-  const { handleEditBooking, handleRemoveBooking } = useBookingReservation();
+  const { handleEditBooking, handleRemoveBooking } = useBookingHandlers();
 
   return (
     <Card className="w-full max-w-md overflow-hidden flex flex-col justify-between">

@@ -5,7 +5,7 @@ import React from "react";
 import SuspenseRouteWrapper from "./suspense-route-wrapper";
 import RouteErrorBoundary from "./error-boundary";
 import SearchPage from "@/pages/Search";
-import Header from "@/components/header";
+import Header from "@/components/Header";
 
 const HomePage = React.lazy(() => import("@/pages/Home"));
 const NotFoundPage = React.lazy(() => import("@/pages/NotFound"));
