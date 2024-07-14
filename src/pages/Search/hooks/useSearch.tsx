@@ -1,5 +1,6 @@
 import useBookingReservation from "@/hooks/useBookingReservation";
 import { useGetPropertiesQuery } from "@/services/api-service";
+import { addDays } from "date-fns";
 import { useSearchParams } from "react-router-dom";
 
 const useSearchData = () => {
@@ -7,7 +8,8 @@ const useSearchData = () => {
 
   const city = searchParams.get("city") || "";
   const checkIn = searchParams.get("checkIn") || new Date().toISOString();
-  const checkOut = searchParams.get("checkOut") || new Date().toISOString();
+  const checkOut =
+    searchParams.get("checkOut") || addDays(new Date(), 1).toISOString();
   const numOfAdults = Number(searchParams.get("numOfAdults"));
   const numOfChildren = Number(searchParams.get("numOfChildren"));
 
@@ -48,6 +50,8 @@ const useSearch = () => {
     isSuccess,
     availableProperties,
     showNoResults,
+    checkIn,
+    checkOut,
   };
 };
 
