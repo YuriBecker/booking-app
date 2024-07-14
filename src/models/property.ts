@@ -11,6 +11,7 @@ export type Property = {
   title: string;
   description: string;
   images: string[];
+  hostMessage: string;
 };
 
 export type Capacity = {

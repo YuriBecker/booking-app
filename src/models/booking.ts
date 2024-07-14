@@ -1,10 +1,11 @@
 export type Booking = {
   id: string;
-  userId: string;
   propertyId: string;
-  startDate: Date;
-  endDate: Date;
+  checkIn: string;
+  checkOut: string;
   status: BookingStatus;
+  price: number;
+  createdAt: string;
 };
 
 export enum BookingStatus {
