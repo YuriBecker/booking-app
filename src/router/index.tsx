@@ -1,5 +1,5 @@
 /* eslint-disable react-refresh/only-export-components */
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, ScrollRestoration } from "react-router-dom";
 import routerPaths from "./paths";
 import React from "react";
 import SuspenseRouteWrapper from "./suspense-route-wrapper";
@@ -18,6 +18,7 @@ const router = createBrowserRouter([
       <SuspenseRouteWrapper>
         <Header />
         <HomePage />
+        <ScrollRestoration />
       </SuspenseRouteWrapper>
     ),
     errorElement: <RouteErrorBoundary />,
@@ -28,6 +29,7 @@ const router = createBrowserRouter([
       <SuspenseRouteWrapper>
         <Header />
         <SearchPage />
+        <ScrollRestoration />
       </SuspenseRouteWrapper>
     ),
     errorElement: <RouteErrorBoundary />,
@@ -38,6 +40,7 @@ const router = createBrowserRouter([
       <SuspenseRouteWrapper>
         <Header />
         <BookingsPage />
+        <ScrollRestoration />
       </SuspenseRouteWrapper>
     ),
     errorElement: <RouteErrorBoundary />,
