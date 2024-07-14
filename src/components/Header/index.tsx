@@ -1,35 +1,16 @@
 import routerPaths from "@/router/paths";
 import { cn } from "@/utils/tailwind";
 import { House } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
-import { Button } from "./ui/button";
+import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import useBookingReservation from "@/hooks/useBookingReservation";
+import useBookingHandlers from "@/hooks/useBookingHandlers";
+import useScrollTracking from "./hooks/useScrollTracking";
 
 const Header = () => {
-  const headerRef = useRef<HTMLHeadingElement>(null);
-
-  const { bookings } = useBookingReservation();
+  const { bookings } = useBookingHandlers();
+  const { headerRef, isScrolled } = useScrollTracking();
 
   const totalBookings = bookings.length;
-
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 30) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
 
   return (
     <header
