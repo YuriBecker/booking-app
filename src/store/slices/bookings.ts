@@ -1,4 +1,4 @@
-import { Booking } from "@/models/booking";
+import { Booking, BookingStatus } from "@/models/booking";
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 
@@ -14,8 +14,18 @@ export const counterSlice = createSlice({
   name: "bookings",
   initialState,
   reducers: {
-    addBooking: (state, action: PayloadAction<Booking>) => {
-      state.bookings.push(action.payload);
+    addBooking: (
+      state,
+      action: PayloadAction<Omit<Booking, "id" | "status" | "createdAt">>
+    ) => {
+      state.bookings.push({
+        id: crypto.randomUUID(),
+        createdAt: new Date().toISOString(),
+        status:
+          //To simulate a async approval
+          Math.random() < 0.5 ? BookingStatus.PENDING : BookingStatus.CONFIRMED,
+        ...action.payload,
+      });
     },
     removeBooking: (state, action: PayloadAction<string>) => {
       state.bookings = state.bookings.filter(
