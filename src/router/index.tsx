@@ -5,15 +5,18 @@ import React from "react";
 import SuspenseRouteWrapper from "./suspense-route-wrapper";
 import RouteErrorBoundary from "./error-boundary";
 import SearchPage from "@/pages/Search";
+import Header from "@/components/header";
 
-const HomePage = React.lazy(() => import("@/pages/HomePage"));
+const HomePage = React.lazy(() => import("@/pages/Home"));
 const NotFoundPage = React.lazy(() => import("@/pages/NotFound"));
+const BookingsPage = React.lazy(() => import("@/pages/Bookings"));
 
 const router = createBrowserRouter([
   {
     path: routerPaths.home,
     element: (
       <SuspenseRouteWrapper>
+        <Header />
         <HomePage />
       </SuspenseRouteWrapper>
     ),
@@ -23,7 +26,18 @@ const router = createBrowserRouter([
     path: routerPaths.search,
     element: (
       <SuspenseRouteWrapper>
+        <Header />
         <SearchPage />
+      </SuspenseRouteWrapper>
+    ),
+    errorElement: <RouteErrorBoundary />,
+  },
+  {
+    path: routerPaths.myBookings,
+    element: (
+      <SuspenseRouteWrapper>
+        <Header />
+        <BookingsPage />
       </SuspenseRouteWrapper>
     ),
     errorElement: <RouteErrorBoundary />,

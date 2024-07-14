@@ -1,13 +1,11 @@
-import { PaginatedData } from "@/models/pagination";
 import { Property } from "@/models/property";
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 const API_URL = import.meta.env.VITE_API_URL;
-const PROPERTIES_PER_PAGE = 15;
+const SORT_MOST_REVIEWED = "-reviews.totalScore,-reviews.reviewsCount";
 
 type GetPropertiesQuery = {
-  page: number;
-  sort?: string;
+  params?: Record<string, string | number>;
 };
 
 export const apiService = createApi({
@@ -15,21 +13,15 @@ export const apiService = createApi({
     baseUrl: API_URL,
   }),
   endpoints: (builder) => ({
-    getProperties: builder.query<PaginatedData<Property[]>, GetPropertiesQuery>(
-      {
-        query: ({
-          page,
-          sort = "-reviews.totalScore,-reviews.reviewsCount",
-        }) => ({
-          url: "properties",
-          params: {
-            _page: page,
-            _per_page: PROPERTIES_PER_PAGE,
-            _sort: sort,
-          },
-        }),
-      }
-    ),
+    getProperties: builder.query<Property[], GetPropertiesQuery>({
+      query: ({ params = {} }) => ({
+        url: "properties",
+        params: {
+          _sort: SORT_MOST_REVIEWED,
+          ...params,
+        },
+      }),
+    }),
     getProperty: builder.query<Property, string>({
       query: (id) => `properties/${id}`,
     }),
