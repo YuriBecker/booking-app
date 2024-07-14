@@ -16,14 +16,16 @@ export const counterSlice = createSlice({
   reducers: {
     addBooking: (
       state,
-      action: PayloadAction<Omit<Booking, "id" | "status" | "createdAt">>
+      action: PayloadAction<Omit<Booking, "id" | "status" | "updatedAt">>
     ) => {
-      state.bookings.push({
+      //To simulate a async status change
+      const status =
+        Math.random() < 0.5 ? BookingStatus.PENDING : BookingStatus.CONFIRMED;
+
+      state.bookings.unshift({
         id: crypto.randomUUID(),
-        createdAt: new Date().toISOString(),
-        status:
-          //To simulate a async approval
-          Math.random() < 0.5 ? BookingStatus.PENDING : BookingStatus.CONFIRMED,
+        updatedAt: new Date().toISOString(),
+        status,
         ...action.payload,
       });
     },
