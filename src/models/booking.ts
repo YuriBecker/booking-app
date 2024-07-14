@@ -5,7 +5,7 @@ export type Booking = {
   checkOut: string;
   status: BookingStatus;
   price: number;
-  createdAt: string;
+  updatedAt: string;
 };
 
 export enum BookingStatus {
