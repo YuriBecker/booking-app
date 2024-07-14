@@ -10,7 +10,7 @@ const initialState: BookingsState = {
   bookings: [],
 };
 
-export const counterSlice = createSlice({
+export const bookingsSlice = createSlice({
   name: "bookings",
   initialState,
   reducers: {
@@ -45,5 +45,5 @@ export const counterSlice = createSlice({
   },
 });
 
-export const { addBooking, editBooking, removeBooking } = counterSlice.actions;
-export default counterSlice.reducer;
+export const { addBooking, editBooking, removeBooking } = bookingsSlice.actions;
+export default bookingsSlice.reducer;
