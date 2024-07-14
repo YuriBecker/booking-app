@@ -1,16 +1,16 @@
 {
   "properties": [
     {
+      "hostMessage": "Welcome to your home away from home! Our charming house is perfect for travelers looking to experience the best of San Diego. Nestled in a vibrant neighborhood, this property offers comfort, convenience, and all the amenities you need for a memorable stay.",
       "id": "b281a4ef-71fa-4555-9c40-be3d7bd3ce36",
       "category": "entire-home",
       "numberOfBeds": 3,
-      "numberOfBedrooms": 1,
+      "numberOfBedrooms": 3,
       "numberOfBathrooms": 1,
       "price": {
         "perNight": 400,
         "hasPromotion": false,
-        "promotionalPricePerNight": null,
-        "cleaningFee": null
+        "promotionalPricePerNight": null
       },
       "location": {
         "city": "San Diego",
@@ -32,6 +32,7 @@
       ]
     },
     {
+      "hostMessage": "Welcome to your home away from home! Our charming house is perfect for travelers looking to experience the best of San Diego. Nestled in a vibrant neighborhood, this property offers comfort, convenience, and all the amenities you need for a memorable stay.",
       "id": "3d4e9dfe-0d41-4132-a0d1-7df955d0da40",
       "category": "entire-home",
       "numberOfBeds": 1,
@@ -40,8 +41,7 @@
       "price": {
         "perNight": 382,
         "hasPromotion": true,
-        "promotionalPricePerNight": 219,
-        "cleaningFee": null
+        "promotionalPricePerNight": 219
       },
       "location": {
         "city": "San Diego",
@@ -63,6 +63,7 @@
       ]
     },
     {
+      "hostMessage": "Welcome to your home away from home! Our charming house is perfect for travelers looking to experience the best of San Francisco. Nestled in a vibrant neighborhood, this property offers comfort, convenience, and all the amenities you need for a memorable stay.",
       "id": "de8e9c88-e568-45d7-8978-abcf2766249b",
       "category": "entire-home",
       "numberOfBeds": 3,
@@ -71,8 +72,7 @@
       "price": {
         "perNight": 347,
         "hasPromotion": true,
-        "promotionalPricePerNight": 146,
-        "cleaningFee": 45
+        "promotionalPricePerNight": 146
       },
       "location": {
         "city": "San Francisco",
@@ -94,16 +94,16 @@
       ]
     },
     {
+      "hostMessage": "Welcome to your home away from home! Our charming house is perfect for travelers looking to experience the best of Los Angeles. Nestled in a vibrant neighborhood, this property offers comfort, convenience, and all the amenities you need for a memorable stay.",
       "id": "98725183-1f5c-478c-b836-4e4792d4b7df",
       "category": "entire-home",
       "numberOfBeds": 3,
-      "numberOfBedrooms": 1,
+      "numberOfBedrooms": 3,
       "numberOfBathrooms": 2,
       "price": {
         "perNight": 363,
         "hasPromotion": false,
-        "promotionalPricePerNight": null,
-        "cleaningFee": 42
+        "promotionalPricePerNight": null
       },
       "location": {
         "city": "Los Angeles",
@@ -125,16 +125,16 @@
       ]
     },
     {
+      "hostMessage": "Welcome to your home away from home! Our charming house is perfect for travelers looking to experience the best of San Francisco. Nestled in a vibrant neighborhood, this property offers comfort, convenience, and all the amenities you need for a memorable stay.",
       "id": "1c6a784d-9d3b-46b1-b09b-bd843a2c892a",
       "category": "room",
       "numberOfBeds": 2,
-      "numberOfBedrooms": 1,
+      "numberOfBedrooms": 2,
       "numberOfBathrooms": 2,
       "price": {
         "perNight": 324,
         "hasPromotion": true,
-        "promotionalPricePerNight": 182,
-        "cleaningFee": null
+        "promotionalPricePerNight": 182
       },
       "location": {
         "city": "San Francisco",
@@ -156,6 +156,7 @@
       ]
     },
     {
+      "hostMessage": "Welcome to your home away from home! Our charming house is perfect for travelers looking to experience the best of Los Angeles. Nestled in a vibrant neighborhood, this property offers comfort, convenience, and all the amenities you need for a memorable stay.",
       "id": "dae2bebb-dbbf-4faa-8418-c603e8228796",
       "category": "room",
       "numberOfBeds": 2,
@@ -164,8 +165,7 @@
       "price": {
         "perNight": 305,
         "hasPromotion": true,
-        "promotionalPricePerNight": 305,
-        "cleaningFee": null
+        "promotionalPricePerNight": 305
       },
       "location": {
         "city": "Los Angeles",
@@ -187,16 +187,16 @@
       ]
     },
     {
+      "hostMessage": "Welcome to your home away from home! Our charming house is perfect for travelers looking to experience the best of San Francisco. Nestled in a vibrant neighborhood, this property offers comfort, convenience, and all the amenities you need for a memorable stay.",
       "id": "e08eebdf-a072-454d-9b00-081f4946d568",
       "category": "room",
       "numberOfBeds": 1,
-      "numberOfBedrooms": 2,
+      "numberOfBedrooms": 1,
       "numberOfBathrooms": 2,
       "price": {
         "perNight": 313,
         "hasPromotion": true,
-        "promotionalPricePerNight": 307,
-        "cleaningFee": null
+        "promotionalPricePerNight": 307
       },
       "location": {
         "city": "San Francisco",
@@ -218,16 +218,16 @@
       ]
     },
     {
+      "hostMessage": "Welcome to your home away from home! Our charming house is perfect for travelers looking to experience the best of San Diego. Nestled in a vibrant neighborhood, this property offers comfort, convenience, and all the amenities you need for a memorable stay.",
       "id": "8c06fa38-7e23-45c9-be0a-68be81036a6a",
       "category": "room",
       "numberOfBeds": 3,
-      "numberOfBedrooms": 2,
+      "numberOfBedrooms": 1,
       "numberOfBathrooms": 2,
       "price": {
         "perNight": 211,
         "hasPromotion": false,
-        "promotionalPricePerNight": null,
-        "cleaningFee": null
+        "promotionalPricePerNight": null
       },
       "location": {
         "city": "San Diego",
@@ -249,16 +249,16 @@
       ]
     },
     {
+      "hostMessage": "Welcome to your home away from home! Our charming house is perfect for travelers looking to experience the best of Los Angeles. Nestled in a vibrant neighborhood, this property offers comfort, convenience, and all the amenities you need for a memorable stay.",
       "id": "48a5c6a9-931f-4afa-9846-30ecf4d4a558",
       "category": "room",
       "numberOfBeds": 3,
-      "numberOfBedrooms": 1,
+      "numberOfBedrooms": 3,
       "numberOfBathrooms": 1,
       "price": {
         "perNight": 335,
         "hasPromotion": true,
-        "promotionalPricePerNight": 132,
-        "cleaningFee": 36
+        "promotionalPricePerNight": 132
       },
       "location": {
         "city": "Los Angeles",
@@ -280,6 +280,7 @@
       ]
     },
     {
+      "hostMessage": "Welcome to your home away from home! Our charming house is perfect for travelers looking to experience the best of San Diego. Nestled in a vibrant neighborhood, this property offers comfort, convenience, and all the amenities you need for a memorable stay.",
       "id": "48261d33-db82-4f59-baee-9c3ddb5e45e2",
       "category": "entire-home",
       "numberOfBeds": 3,
@@ -288,8 +289,7 @@
       "price": {
         "perNight": 389,
         "hasPromotion": false,
-        "promotionalPricePerNight": null,
-        "cleaningFee": 37
+        "promotionalPricePerNight": null
       },
       "location": {
         "city": "San Diego",
@@ -311,6 +311,7 @@
       ]
     },
     {
+      "hostMessage": "Welcome to your home away from home! Our charming house is perfect for travelers looking to experience the best of Los Angeles. Nestled in a vibrant neighborhood, this property offers comfort, convenience, and all the amenities you need for a memorable stay.",
       "id": "59db6e2a-fa39-4ff0-8c0a-0e477f4d9b50",
       "category": "room",
       "numberOfBeds": 2,
@@ -319,8 +320,7 @@
       "price": {
         "perNight": 242,
         "hasPromotion": true,
-        "promotionalPricePerNight": 116,
-        "cleaningFee": 49
+        "promotionalPricePerNight": 116
       },
       "location": {
         "city": "Los Angeles",
@@ -343,6 +343,7 @@
       ]
     },
     {
+      "hostMessage": "Welcome to your home away from home! Our charming house is perfect for travelers looking to experience the best of Los Angeles. Nestled in a vibrant neighborhood, this property offers comfort, convenience, and all the amenities you need for a memorable stay.",
       "id": "690bcf27-0f21-4ad1-8f69-4becf5e23ea2",
       "category": "entire-home",
       "numberOfBeds": 1,
@@ -351,8 +352,7 @@
       "price": {
         "perNight": 281,
         "hasPromotion": true,
-        "promotionalPricePerNight": 270,
-        "cleaningFee": null
+        "promotionalPricePerNight": 270
       },
       "location": {
         "city": "Los Angeles",
@@ -374,16 +374,16 @@
       ]
     },
     {
+      "hostMessage": "Welcome to your home away from home! Our charming house is perfect for travelers looking to experience the best of San Francisco. Nestled in a vibrant neighborhood, this property offers comfort, convenience, and all the amenities you need for a memorable stay.",
       "id": "d4f54211-f807-4728-a1cd-b9926f171e23",
       "category": "room",
       "numberOfBeds": 2,
-      "numberOfBedrooms": 2,
+      "numberOfBedrooms": 3,
       "numberOfBathrooms": 2,
       "price": {
         "perNight": 396,
         "hasPromotion": false,
-        "promotionalPricePerNight": null,
-        "cleaningFee": null
+        "promotionalPricePerNight": null
       },
       "location": {
         "city": "San Francisco",
@@ -405,16 +405,16 @@
       ]
     },
     {
+      "hostMessage": "Welcome to your home away from home! Our charming house is perfect for travelers looking to experience the best of San Francisco. Nestled in a vibrant neighborhood, this property offers comfort, convenience, and all the amenities you need for a memorable stay.",
       "id": "b043bf82-37dd-4127-97ef-baca6ee7615b",
       "category": "entire-home",
       "numberOfBeds": 3,
-      "numberOfBedrooms": 2,
+      "numberOfBedrooms": 3,
       "numberOfBathrooms": 2,
       "price": {
         "perNight": 246,
         "hasPromotion": false,
-        "promotionalPricePerNight": null,
-        "cleaningFee": 37
+        "promotionalPricePerNight": null
       },
       "location": {
         "city": "San Francisco",
@@ -437,16 +437,16 @@
       ]
     },
     {
+      "hostMessage": "Welcome to your home away from home! Our charming house is perfect for travelers looking to experience the best of San Francisco. Nestled in a vibrant neighborhood, this property offers comfort, convenience, and all the amenities you need for a memorable stay.",
       "id": "ca455dcf-c53e-4bd0-8001-4a69d42f5552",
       "category": "room",
       "numberOfBeds": 2,
-      "numberOfBedrooms": 2,
+      "numberOfBedrooms": 3,
       "numberOfBathrooms": 1,
       "price": {
         "perNight": 363,
         "hasPromotion": true,
-        "promotionalPricePerNight": 255,
-        "cleaningFee": null
+        "promotionalPricePerNight": 255
       },
       "location": {
         "city": "San Francisco",
@@ -468,6 +468,7 @@
       ]
     },
     {
+      "hostMessage": "Welcome to your home away from home! Our charming house is perfect for travelers looking to experience the best of San Diego. Nestled in a vibrant neighborhood, this property offers comfort, convenience, and all the amenities you need for a memorable stay.",
       "id": "0d25a1d8-d048-4eee-844a-9481cdbbb153",
       "category": "entire-home",
       "numberOfBeds": 3,
@@ -476,8 +477,7 @@
       "price": {
         "perNight": 206,
         "hasPromotion": true,
-        "promotionalPricePerNight": 155,
-        "cleaningFee": null
+        "promotionalPricePerNight": 155
       },
       "location": {
         "city": "San Diego",
@@ -499,16 +499,16 @@
       ]
     },
     {
+      "hostMessage": "Welcome to your home away from home! Our charming house is perfect for travelers looking to experience the best of Los Angeles. Nestled in a vibrant neighborhood, this property offers comfort, convenience, and all the amenities you need for a memorable stay.",
       "id": "3e96356d-98d5-417b-a4c3-c0194edf1e59",
       "category": "room",
       "numberOfBeds": 3,
-      "numberOfBedrooms": 2,
+      "numberOfBedrooms": 1,
       "numberOfBathrooms": 1,
       "price": {
         "perNight": 308,
         "hasPromotion": false,
-        "promotionalPricePerNight": null,
-        "cleaningFee": null
+        "promotionalPricePerNight": null
       },
       "location": {
         "city": "Los Angeles",
@@ -536,16 +536,16 @@
       ]
     },
     {
+      "hostMessage": "Welcome to your home away from home! Our charming house is perfect for travelers looking to experience the best of San Francisco. Nestled in a vibrant neighborhood, this property offers comfort, convenience, and all the amenities you need for a memorable stay.",
       "id": "a3be54c1-4170-48f9-8aae-d50f73baa732",
       "category": "room",
       "numberOfBeds": 3,
-      "numberOfBedrooms": 1,
+      "numberOfBedrooms": 2,
       "numberOfBathrooms": 1,
       "price": {
         "perNight": 385,
         "hasPromotion": false,
-        "promotionalPricePerNight": null,
-        "cleaningFee": null
+        "promotionalPricePerNight": null
       },
       "location": {
         "city": "San Francisco",
@@ -567,16 +567,16 @@
       ]
     },
     {
+      "hostMessage": "Welcome to your home away from home! Our charming house is perfect for travelers looking to experience the best of Los Angeles. Nestled in a vibrant neighborhood, this property offers comfort, convenience, and all the amenities you need for a memorable stay.",
       "id": "abec8f3f-a2c9-4f9b-a544-6783c9943b33",
       "category": "entire-home",
       "numberOfBeds": 1,
-      "numberOfBedrooms": 2,
+      "numberOfBedrooms": 3,
       "numberOfBathrooms": 1,
       "price": {
         "perNight": 302,
         "hasPromotion": false,
-        "promotionalPricePerNight": null,
-        "cleaningFee": null
+        "promotionalPricePerNight": null
       },
       "location": {
         "city": "Los Angeles",
@@ -599,16 +599,16 @@
       ]
     },
     {
+      "hostMessage": "Welcome to your home away from home! Our charming house is perfect for travelers looking to experience the best of San Diego. Nestled in a vibrant neighborhood, this property offers comfort, convenience, and all the amenities you need for a memorable stay.",
       "id": "af4cc517-4048-4671-87c1-f263189d464e",
       "category": "room",
       "numberOfBeds": 3,
-      "numberOfBedrooms": 2,
+      "numberOfBedrooms": 3,
       "numberOfBathrooms": 1,
       "price": {
         "perNight": 252,
         "hasPromotion": false,
-        "promotionalPricePerNight": null,
-        "cleaningFee": 36
+        "promotionalPricePerNight": null
       },
       "location": {
         "city": "San Diego",
@@ -630,16 +630,16 @@
       ]
     },
     {
+      "hostMessage": "Welcome to your home away from home! Our charming house is perfect for travelers looking to experience the best of San Francisco. Nestled in a vibrant neighborhood, this property offers comfort, convenience, and all the amenities you need for a memorable stay.",
       "id": "71353fbb-f3dc-4386-98e9-0cdf5ea6c7ef",
       "category": "entire-home",
       "numberOfBeds": 2,
-      "numberOfBedrooms": 1,
+      "numberOfBedrooms": 3,
       "numberOfBathrooms": 1,
       "price": {
         "perNight": 388,
         "hasPromotion": false,
-        "promotionalPricePerNight": null,
-        "cleaningFee": 33
+        "promotionalPricePerNight": null
       },
       "location": {
         "city": "San Francisco",
@@ -661,6 +661,7 @@
       ]
     },
     {
+      "hostMessage": "Welcome to your home away from home! Our charming house is perfect for travelers looking to experience the best of San Francisco. Nestled in a vibrant neighborhood, this property offers comfort, convenience, and all the amenities you need for a memorable stay.",
       "id": "3a1b820d-1d40-47e2-930d-b43a4fddf1a8",
       "category": "entire-home",
       "numberOfBeds": 2,
@@ -669,8 +670,7 @@
       "price": {
         "perNight": 277,
         "hasPromotion": true,
-        "promotionalPricePerNight": 204,
-        "cleaningFee": null
+        "promotionalPricePerNight": 204
       },
       "location": {
         "city": "San Francisco",
@@ -693,6 +693,7 @@
       ]
     },
     {
+      "hostMessage": "Welcome to your home away from home! Our charming house is perfect for travelers looking to experience the best of San Diego. Nestled in a vibrant neighborhood, this property offers comfort, convenience, and all the amenities you need for a memorable stay.",
       "id": "b8998608-6ff1-4856-a9ce-5b05ae4c415c",
       "category": "entire-home",
       "numberOfBeds": 2,
@@ -701,8 +702,7 @@
       "price": {
         "perNight": 242,
         "hasPromotion": true,
-        "promotionalPricePerNight": 123,
-        "cleaningFee": 39
+        "promotionalPricePerNight": 123
       },
       "location": {
         "city": "San Diego",
@@ -724,16 +724,16 @@
       ]
     },
     {
+      "hostMessage": "Welcome to your home away from home! Our charming house is perfect for travelers looking to experience the best of Los Angeles. Nestled in a vibrant neighborhood, this property offers comfort, convenience, and all the amenities you need for a memorable stay.",
       "id": "5cc28c57-3749-4130-afb5-105013653e56",
       "category": "entire-home",
       "numberOfBeds": 3,
-      "numberOfBedrooms": 2,
+      "numberOfBedrooms": 3,
       "numberOfBathrooms": 1,
       "price": {
         "perNight": 251,
         "hasPromotion": false,
-        "promotionalPricePerNight": null,
-        "cleaningFee": 45
+        "promotionalPricePerNight": null
       },
       "location": {
         "city": "Los Angeles",
@@ -755,6 +755,7 @@
       ]
     },
     {
+      "hostMessage": "Welcome to your home away from home! Our charming house is perfect for travelers looking to experience the best of Los Angeles. Nestled in a vibrant neighborhood, this property offers comfort, convenience, and all the amenities you need for a memorable stay.",
       "id": "f01196dd-826a-45bc-b0a1-e0056eeb0dc0",
       "category": "room",
       "numberOfBeds": 1,
@@ -763,8 +764,7 @@
       "price": {
         "perNight": 277,
         "hasPromotion": false,
-        "promotionalPricePerNight": null,
-        "cleaningFee": 45
+        "promotionalPricePerNight": null
       },
       "location": {
         "city": "Los Angeles",
@@ -786,16 +786,16 @@
       ]
     },
     {
+      "hostMessage": "Welcome to your home away from home! Our charming house is perfect for travelers looking to experience the best of Los Angeles. Nestled in a vibrant neighborhood, this property offers comfort, convenience, and all the amenities you need for a memorable stay.",
       "id": "17036137-0c16-49d3-b1d8-6eca7fc7daac",
       "category": "room",
       "numberOfBeds": 2,
-      "numberOfBedrooms": 1,
+      "numberOfBedrooms": 2,
       "numberOfBathrooms": 1,
       "price": {
         "perNight": 288,
         "hasPromotion": false,
-        "promotionalPricePerNight": null,
-        "cleaningFee": null
+        "promotionalPricePerNight": null
       },
       "location": {
         "city": "Los Angeles",
@@ -818,16 +818,16 @@
       ]
     },
     {
+      "hostMessage": "Welcome to your home away from home! Our charming house is perfect for travelers looking to experience the best of Los Angeles. Nestled in a vibrant neighborhood, this property offers comfort, convenience, and all the amenities you need for a memorable stay.",
       "id": "0abec9fd-3c00-497a-8447-4b74d3428175",
       "category": "entire-home",
       "numberOfBeds": 2,
-      "numberOfBedrooms": 1,
+      "numberOfBedrooms": 3,
       "numberOfBathrooms": 2,
       "price": {
         "perNight": 331,
         "hasPromotion": true,
-        "promotionalPricePerNight": 192,
-        "cleaningFee": 46
+        "promotionalPricePerNight": 192
       },
       "location": {
         "city": "Los Angeles",
@@ -850,6 +850,7 @@
       ]
     },
     {
+      "hostMessage": "Welcome to your home away from home! Our charming house is perfect for travelers looking to experience the best of San Diego. Nestled in a vibrant neighborhood, this property offers comfort, convenience, and all the amenities you need for a memorable stay.",
       "id": "01cb0e2a-9c27-4e38-9b52-d4d1592f8a13",
       "category": "room",
       "numberOfBeds": 2,
@@ -858,8 +859,7 @@
       "price": {
         "perNight": 260,
         "hasPromotion": false,
-        "promotionalPricePerNight": null,
-        "cleaningFee": 48
+        "promotionalPricePerNight": null
       },
       "location": {
         "city": "San Diego",
@@ -881,16 +881,16 @@
       ]
     },
     {
+      "hostMessage": "Welcome to your home away from home! Our charming house is perfect for travelers looking to experience the best of San Francisco. Nestled in a vibrant neighborhood, this property offers comfort, convenience, and all the amenities you need for a memorable stay.",
       "id": "5f8f208f-6d6a-436f-9fdf-ec3668a6e3e5",
       "category": "entire-home",
       "numberOfBeds": 1,
-      "numberOfBedrooms": 1,
+      "numberOfBedrooms": 2,
       "numberOfBathrooms": 1,
       "price": {
         "perNight": 260,
         "hasPromotion": true,
-        "promotionalPricePerNight": 102,
-        "cleaningFee": null
+        "promotionalPricePerNight": 102
       },
       "location": {
         "city": "San Francisco",
@@ -912,16 +912,16 @@
       ]
     },
     {
+      "hostMessage": "Welcome to your home away from home! Our charming house is perfect for travelers looking to experience the best of San Diego. Nestled in a vibrant neighborhood, this property offers comfort, convenience, and all the amenities you need for a memorable stay.",
       "id": "a050ba79-ffaa-4115-a5e9-e397befd0c3c",
       "category": "entire-home",
       "numberOfBeds": 3,
-      "numberOfBedrooms": 2,
+      "numberOfBedrooms": 1,
       "numberOfBathrooms": 2,
       "price": {
         "perNight": 341,
         "hasPromotion": true,
-        "promotionalPricePerNight": 154,
-        "cleaningFee": null
+        "promotionalPricePerNight": 154
       },
       "location": {
         "city": "San Diego",
@@ -943,6 +943,7 @@
       ]
     },
     {
+      "hostMessage": "Welcome to your home away from home! Our charming house is perfect for travelers looking to experience the best of Los Angeles. Nestled in a vibrant neighborhood, this property offers comfort, convenience, and all the amenities you need for a memorable stay.",
       "id": "9d127c41-98b3-4537-bc38-6752861a89dc",
       "category": "entire-home",
       "numberOfBeds": 2,
@@ -951,8 +952,7 @@
       "price": {
         "perNight": 282,
         "hasPromotion": false,
-        "promotionalPricePerNight": null,
-        "cleaningFee": null
+        "promotionalPricePerNight": null
       },
       "location": {
         "city": "Los Angeles",
@@ -975,16 +975,16 @@
       ]
     },
     {
+      "hostMessage": "Welcome to your home away from home! Our charming house is perfect for travelers looking to experience the best of Los Angeles. Nestled in a vibrant neighborhood, this property offers comfort, convenience, and all the amenities you need for a memorable stay.",
       "id": "77292e20-0c91-4b1f-8215-342116eea37a",
       "category": "room",
       "numberOfBeds": 1,
-      "numberOfBedrooms": 2,
+      "numberOfBedrooms": 1,
       "numberOfBathrooms": 2,
       "price": {
         "perNight": 246,
         "hasPromotion": true,
-        "promotionalPricePerNight": 127,
-        "cleaningFee": null
+        "promotionalPricePerNight": 127
       },
       "location": {
         "city": "Los Angeles",
@@ -1006,16 +1006,16 @@
       ]
     },
     {
+      "hostMessage": "Welcome to your home away from home! Our charming house is perfect for travelers looking to experience the best of San Francisco. Nestled in a vibrant neighborhood, this property offers comfort, convenience, and all the amenities you need for a memorable stay.",
       "id": "b924a4f8-6c79-4c14-af37-2716e5e5e51b",
       "category": "room",
       "numberOfBeds": 1,
-      "numberOfBedrooms": 2,
+      "numberOfBedrooms": 1,
       "numberOfBathrooms": 1,
       "price": {
         "perNight": 321,
         "hasPromotion": true,
-        "promotionalPricePerNight": 224,
-        "cleaningFee": 39
+        "promotionalPricePerNight": 224
       },
       "location": {
         "city": "San Francisco",
@@ -1037,16 +1037,16 @@
       ]
     },
     {
+      "hostMessage": "Welcome to your home away from home! Our charming house is perfect for travelers looking to experience the best of San Diego. Nestled in a vibrant neighborhood, this property offers comfort, convenience, and all the amenities you need for a memorable stay.",
       "id": "1c774a26-ef66-47f1-922e-428c11d6b9c4",
       "category": "entire-home",
       "numberOfBeds": 1,
-      "numberOfBedrooms": 2,
+      "numberOfBedrooms": 3,
       "numberOfBathrooms": 2,
       "price": {
         "perNight": 391,
         "hasPromotion": true,
-        "promotionalPricePerNight": 168,
-        "cleaningFee": 46
+        "promotionalPricePerNight": 168
       },
       "location": {
         "city": "San Diego",
@@ -1068,16 +1068,16 @@
       ]
     },
     {
+      "hostMessage": "Welcome to your home away from home! Our charming house is perfect for travelers looking to experience the best of San Francisco. Nestled in a vibrant neighborhood, this property offers comfort, convenience, and all the amenities you need for a memorable stay.",
       "id": "7842b0b2-fcf7-4015-bcac-76348c1c6535",
       "category": "entire-home",
       "numberOfBeds": 2,
-      "numberOfBedrooms": 2,
+      "numberOfBedrooms": 3,
       "numberOfBathrooms": 2,
       "price": {
         "perNight": 231,
         "hasPromotion": true,
-        "promotionalPricePerNight": 115,
-        "cleaningFee": 32
+        "promotionalPricePerNight": 115
       },
       "location": {
         "city": "San Francisco",
@@ -1099,16 +1099,16 @@
       ]
     },
     {
+      "hostMessage": "Welcome to your home away from home! Our charming house is perfect for travelers looking to experience the best of San Francisco. Nestled in a vibrant neighborhood, this property offers comfort, convenience, and all the amenities you need for a memorable stay.",
       "id": "7fb1bc45-50ed-4254-9185-08b8ce4a2079",
       "category": "entire-home",
       "numberOfBeds": 1,
-      "numberOfBedrooms": 1,
+      "numberOfBedrooms": 2,
       "numberOfBathrooms": 1,
       "price": {
         "perNight": 216,
         "hasPromotion": false,
-        "promotionalPricePerNight": null,
-        "cleaningFee": 48
+        "promotionalPricePerNight": null
       },
       "location": {
         "city": "San Francisco",
@@ -1130,16 +1130,16 @@
       ]
     },
     {
+      "hostMessage": "Welcome to your home away from home! Our charming house is perfect for travelers looking to experience the best of San Diego. Nestled in a vibrant neighborhood, this property offers comfort, convenience, and all the amenities you need for a memorable stay.",
       "id": "d18a5408-6037-4f18-b03c-b271380048f2",
       "category": "entire-home",
       "numberOfBeds": 1,
-      "numberOfBedrooms": 1,
+      "numberOfBedrooms": 2,
       "numberOfBathrooms": 2,
       "price": {
         "perNight": 286,
         "hasPromotion": false,
-        "promotionalPricePerNight": null,
-        "cleaningFee": null
+        "promotionalPricePerNight": null
       },
       "location": {
         "city": "San Diego",
@@ -1161,16 +1161,16 @@
       ]
     },
     {
+      "hostMessage": "Welcome to your home away from home! Our charming house is perfect for travelers looking to experience the best of San Diego. Nestled in a vibrant neighborhood, this property offers comfort, convenience, and all the amenities you need for a memorable stay.",
       "id": "f5e29aaf-67f1-485e-bdc6-4529dd8598de",
       "category": "room",
       "numberOfBeds": 2,
-      "numberOfBedrooms": 2,
+      "numberOfBedrooms": 3,
       "numberOfBathrooms": 2,
       "price": {
         "perNight": 327,
         "hasPromotion": true,
-        "promotionalPricePerNight": 321,
-        "cleaningFee": null
+        "promotionalPricePerNight": 321
       },
       "location": {
         "city": "San Diego",
@@ -1192,16 +1192,16 @@
       ]
     },
     {
+      "hostMessage": "Welcome to your home away from home! Our charming house is perfect for travelers looking to experience the best of San Diego. Nestled in a vibrant neighborhood, this property offers comfort, convenience, and all the amenities you need for a memorable stay.",
       "id": "27432290-3a1a-4134-8762-4ecf0eac6ec6",
       "category": "room",
       "numberOfBeds": 3,
-      "numberOfBedrooms": 2,
+      "numberOfBedrooms": 3,
       "numberOfBathrooms": 2,
       "price": {
         "perNight": 317,
         "hasPromotion": false,
-        "promotionalPricePerNight": null,
-        "cleaningFee": null
+        "promotionalPricePerNight": null
       },
       "location": {
         "city": "San Diego",
@@ -1223,16 +1223,16 @@
       ]
     },
     {
+      "hostMessage": "Welcome to your home away from home! Our charming house is perfect for travelers looking to experience the best of Los Angeles. Nestled in a vibrant neighborhood, this property offers comfort, convenience, and all the amenities you need for a memorable stay.",
       "id": "eecf319e-de24-4807-819b-496eb4ebabf7",
       "category": "room",
       "numberOfBeds": 3,
-      "numberOfBedrooms": 1,
+      "numberOfBedrooms": 3,
       "numberOfBathrooms": 1,
       "price": {
         "perNight": 304,
         "hasPromotion": true,
-        "promotionalPricePerNight": 169,
-        "cleaningFee": 48
+        "promotionalPricePerNight": 169
       },
       "location": {
         "city": "Los Angeles",
@@ -1259,16 +1259,16 @@
       ]
     },
     {
+      "hostMessage": "Welcome to your home away from home! Our charming house is perfect for travelers looking to experience the best of San Francisco. Nestled in a vibrant neighborhood, this property offers comfort, convenience, and all the amenities you need for a memorable stay.",
       "id": "d446305b-b4fb-49ec-aff8-1479ecd7f44b",
       "category": "room",
       "numberOfBeds": 3,
-      "numberOfBedrooms": 1,
+      "numberOfBedrooms": 3,
       "numberOfBathrooms": 2,
       "price": {
         "perNight": 332,
         "hasPromotion": true,
-        "promotionalPricePerNight": 306,
-        "cleaningFee": null
+        "promotionalPricePerNight": 306
       },
       "location": {
         "city": "San Francisco",
@@ -1290,16 +1290,16 @@
       ]
     },
     {
+      "hostMessage": "Welcome to your home away from home! Our charming house is perfect for travelers looking to experience the best of Los Angeles. Nestled in a vibrant neighborhood, this property offers comfort, convenience, and all the amenities you need for a memorable stay.",
       "id": "7bdc1bad-64d7-4058-9ef7-37c49ba1583a",
       "category": "entire-home",
       "numberOfBeds": 2,
-      "numberOfBedrooms": 2,
+      "numberOfBedrooms": 1,
       "numberOfBathrooms": 1,
       "price": {
         "perNight": 297,
         "hasPromotion": true,
-        "promotionalPricePerNight": 199,
-        "cleaningFee": 31
+        "promotionalPricePerNight": 199
       },
       "location": {
         "city": "Los Angeles",
@@ -1322,6 +1322,7 @@
       ]
     },
     {
+      "hostMessage": "Welcome to your home away from home! Our charming house is perfect for travelers looking to experience the best of San Diego. Nestled in a vibrant neighborhood, this property offers comfort, convenience, and all the amenities you need for a memorable stay.",
       "id": "32f0fbbe-50e7-4b7e-8ec1-568419daa22a",
       "category": "entire-home",
       "numberOfBeds": 1,
@@ -1330,8 +1331,7 @@
       "price": {
         "perNight": 256,
         "hasPromotion": false,
-        "promotionalPricePerNight": null,
-        "cleaningFee": 46
+        "promotionalPricePerNight": null
       },
       "location": {
         "city": "San Diego",
@@ -1353,16 +1353,16 @@
       ]
     },
     {
+      "hostMessage": "Welcome to your home away from home! Our charming house is perfect for travelers looking to experience the best of San Francisco. Nestled in a vibrant neighborhood, this property offers comfort, convenience, and all the amenities you need for a memorable stay.",
       "id": "a40d3b4c-d969-48a5-ac4f-6089b9a92705",
       "category": "room",
       "numberOfBeds": 3,
-      "numberOfBedrooms": 1,
+      "numberOfBedrooms": 2,
       "numberOfBathrooms": 2,
       "price": {
         "perNight": 214,
         "hasPromotion": true,
-        "promotionalPricePerNight": 146,
-        "cleaningFee": 42
+        "promotionalPricePerNight": 146
       },
       "location": {
         "city": "San Francisco",
@@ -1384,16 +1384,16 @@
       ]
     },
     {
+      "hostMessage": "Welcome to your home away from home! Our charming house is perfect for travelers looking to experience the best of Los Angeles. Nestled in a vibrant neighborhood, this property offers comfort, convenience, and all the amenities you need for a memorable stay.",
       "id": "c4c0b460-6816-48c0-b240-25092ab7ab9e",
       "category": "entire-home",
       "numberOfBeds": 2,
-      "numberOfBedrooms": 1,
+      "numberOfBedrooms": 3,
       "numberOfBathrooms": 2,
       "price": {
         "perNight": 279,
         "hasPromotion": false,
-        "promotionalPricePerNight": null,
-        "cleaningFee": null
+        "promotionalPricePerNight": null
       },
       "location": {
         "city": "Los Angeles",
@@ -1420,16 +1420,16 @@
       ]
     },
     {
+      "hostMessage": "Welcome to your home away from home! Our charming house is perfect for travelers looking to experience the best of San Francisco. Nestled in a vibrant neighborhood, this property offers comfort, convenience, and all the amenities you need for a memorable stay.",
       "id": "ea0ebd21-2f20-4f9a-aba5-69e9e82b88ea",
       "category": "room",
       "numberOfBeds": 2,
-      "numberOfBedrooms": 2,
+      "numberOfBedrooms": 1,
       "numberOfBathrooms": 2,
       "price": {
         "perNight": 275,
         "hasPromotion": true,
-        "promotionalPricePerNight": 119,
-        "cleaningFee": 42
+        "promotionalPricePerNight": 119
       },
       "location": {
         "city": "San Francisco",
@@ -1451,16 +1451,16 @@
       ]
     },
     {
+      "hostMessage": "Welcome to your home away from home! Our charming house is perfect for travelers looking to experience the best of Los Angeles. Nestled in a vibrant neighborhood, this property offers comfort, convenience, and all the amenities you need for a memorable stay.",
       "id": "d2c861d3-df5d-4cde-a0b1-5e33ae73f4a4",
       "category": "entire-home",
       "numberOfBeds": 2,
-      "numberOfBedrooms": 1,
+      "numberOfBedrooms": 3,
       "numberOfBathrooms": 2,
       "price": {
         "perNight": 328,
         "hasPromotion": true,
-        "promotionalPricePerNight": 273,
-        "cleaningFee": 33
+        "promotionalPricePerNight": 273
       },
       "location": {
         "city": "Los Angeles",
@@ -1482,16 +1482,16 @@
       ]
     },
     {
+      "hostMessage": "Welcome to your home away from home! Our charming house is perfect for travelers looking to experience the best of San Diego. Nestled in a vibrant neighborhood, this property offers comfort, convenience, and all the amenities you need for a memorable stay.",
       "id": "f14732e2-bac8-4203-a5ba-11b65dbc022b",
       "category": "room",
       "numberOfBeds": 2,
-      "numberOfBedrooms": 2,
+      "numberOfBedrooms": 3,
       "numberOfBathrooms": 2,
       "price": {
         "perNight": 216,
         "hasPromotion": false,
-        "promotionalPricePerNight": null,
-        "cleaningFee": 43
+        "promotionalPricePerNight": null
       },
       "location": {
         "city": "San Diego",
@@ -1514,6 +1514,7 @@
       ]
     },
     {
+      "hostMessage": "Welcome to your home away from home! Our charming house is perfect for travelers looking to experience the best of San Francisco. Nestled in a vibrant neighborhood, this property offers comfort, convenience, and all the amenities you need for a memorable stay.",
       "id": "bb018c6e-a51e-4771-9a58-fad798a70caf",
       "category": "entire-home",
       "numberOfBeds": 1,
@@ -1522,8 +1523,7 @@
       "price": {
         "perNight": 397,
         "hasPromotion": true,
-        "promotionalPricePerNight": 371,
-        "cleaningFee": null
+        "promotionalPricePerNight": 371
       },
       "location": {
         "city": "San Francisco",
@@ -1545,6 +1545,7 @@
       ]
     },
     {
+      "hostMessage": "Welcome to your home away from home! Our charming house is perfect for travelers looking to experience the best of San Francisco. Nestled in a vibrant neighborhood, this property offers comfort, convenience, and all the amenities you need for a memorable stay.",
       "id": "f8acb35c-dd2b-4ab2-99a1-de7aed235a71",
       "category": "entire-home",
       "numberOfBeds": 1,
@@ -1553,8 +1554,7 @@
       "price": {
         "perNight": 395,
         "hasPromotion": true,
-        "promotionalPricePerNight": 334,
-        "cleaningFee": null
+        "promotionalPricePerNight": 334
       },
       "location": {
         "city": "San Francisco",
@@ -1576,6 +1576,7 @@
       ]
     },
     {
+      "hostMessage": "Welcome to your home away from home! Our charming house is perfect for travelers looking to experience the best of San Diego. Nestled in a vibrant neighborhood, this property offers comfort, convenience, and all the amenities you need for a memorable stay.",
       "id": "c765fbc1-fd32-42be-bb14-02fe5fab3828",
       "category": "room",
       "numberOfBeds": 1,
@@ -1584,8 +1585,7 @@
       "price": {
         "perNight": 280,
         "hasPromotion": false,
-        "promotionalPricePerNight": null,
-        "cleaningFee": 31
+        "promotionalPricePerNight": null
       },
       "location": {
         "city": "San Diego",
@@ -1607,6 +1607,7 @@
       ]
     },
     {
+      "hostMessage": "Welcome to your home away from home! Our charming house is perfect for travelers looking to experience the best of San Francisco. Nestled in a vibrant neighborhood, this property offers comfort, convenience, and all the amenities you need for a memorable stay.",
       "id": "ea10fd68-80d0-47a6-80e5-0f1fe5798d4f",
       "category": "room",
       "numberOfBeds": 2,
@@ -1615,8 +1616,7 @@
       "price": {
         "perNight": 380,
         "hasPromotion": true,
-        "promotionalPricePerNight": 356,
-        "cleaningFee": null
+        "promotionalPricePerNight": 356
       },
       "location": {
         "city": "San Francisco",
@@ -1638,16 +1638,16 @@
       ]
     },
     {
+      "hostMessage": "Welcome to your home away from home! Our charming house is perfect for travelers looking to experience the best of Los Angeles. Nestled in a vibrant neighborhood, this property offers comfort, convenience, and all the amenities you need for a memorable stay.",
       "id": "8f7ba447-ec89-424a-8b00-d6099a26d924",
       "category": "entire-home",
       "numberOfBeds": 2,
-      "numberOfBedrooms": 1,
+      "numberOfBedrooms": 2,
       "numberOfBathrooms": 2,
       "price": {
         "perNight": 352,
         "hasPromotion": true,
-        "promotionalPricePerNight": 342,
-        "cleaningFee": null
+        "promotionalPricePerNight": 342
       },
       "location": {
         "city": "Los Angeles",
@@ -1675,6 +1675,7 @@
       ]
     },
     {
+      "hostMessage": "Welcome to your home away from home! Our charming house is perfect for travelers looking to experience the best of San Diego. Nestled in a vibrant neighborhood, this property offers comfort, convenience, and all the amenities you need for a memorable stay.",
       "id": "e57887b0-b1b5-4e63-be79-00d35a9e10ee",
       "category": "room",
       "numberOfBeds": 1,
@@ -1683,8 +1684,7 @@
       "price": {
         "perNight": 340,
         "hasPromotion": false,
-        "promotionalPricePerNight": null,
-        "cleaningFee": null
+        "promotionalPricePerNight": null
       },
       "location": {
         "city": "San Diego",
@@ -1706,6 +1706,7 @@
       ]
     },
     {
+      "hostMessage": "Welcome to your home away from home! Our charming house is perfect for travelers looking to experience the best of Los Angeles. Nestled in a vibrant neighborhood, this property offers comfort, convenience, and all the amenities you need for a memorable stay.",
       "id": "5eaa5eac-3b80-4708-b1e7-992dce44a56a",
       "category": "room",
       "numberOfBeds": 2,
@@ -1714,8 +1715,7 @@
       "price": {
         "perNight": 390,
         "hasPromotion": true,
-        "promotionalPricePerNight": 156,
-        "cleaningFee": 38
+        "promotionalPricePerNight": 156
       },
       "location": {
         "city": "Los Angeles",
@@ -1737,16 +1737,16 @@
       ]
     },
     {
+      "hostMessage": "Welcome to your home away from home! Our charming house is perfect for travelers looking to experience the best of San Diego. Nestled in a vibrant neighborhood, this property offers comfort, convenience, and all the amenities you need for a memorable stay.",
       "id": "a4e03536-8fe1-449a-ba2f-3a57129c584c",
       "category": "room",
       "numberOfBeds": 1,
-      "numberOfBedrooms": 1,
+      "numberOfBedrooms": 2,
       "numberOfBathrooms": 2,
       "price": {
         "perNight": 346,
         "hasPromotion": true,
-        "promotionalPricePerNight": 217,
-        "cleaningFee": 32
+        "promotionalPricePerNight": 217
       },
       "location": {
         "city": "San Diego",
@@ -1768,16 +1768,16 @@
       ]
     },
     {
+      "hostMessage": "Welcome to your home away from home! Our charming house is perfect for travelers looking to experience the best of San Diego. Nestled in a vibrant neighborhood, this property offers comfort, convenience, and all the amenities you need for a memorable stay.",
       "id": "b75d2895-437c-47b5-8680-5deadbb1af3c",
       "category": "room",
       "numberOfBeds": 2,
-      "numberOfBedrooms": 2,
+      "numberOfBedrooms": 1,
       "numberOfBathrooms": 2,
       "price": {
         "perNight": 264,
         "hasPromotion": false,
-        "promotionalPricePerNight": null,
-        "cleaningFee": 32
+        "promotionalPricePerNight": null
       },
       "location": {
         "city": "San Diego",
@@ -1799,6 +1799,7 @@
       ]
     },
     {
+      "hostMessage": "Welcome to your home away from home! Our charming house is perfect for travelers looking to experience the best of San Francisco. Nestled in a vibrant neighborhood, this property offers comfort, convenience, and all the amenities you need for a memorable stay.",
       "id": "fc81c09c-a3ad-41b5-8e24-c5aa2053f9e4",
       "category": "entire-home",
       "numberOfBeds": 3,
@@ -1807,8 +1808,7 @@
       "price": {
         "perNight": 355,
         "hasPromotion": true,
-        "promotionalPricePerNight": 333,
-        "cleaningFee": null
+        "promotionalPricePerNight": 333
       },
       "location": {
         "city": "San Francisco",
@@ -1830,16 +1830,16 @@
       ]
     },
     {
+      "hostMessage": "Welcome to your home away from home! Our charming house is perfect for travelers looking to experience the best of San Diego. Nestled in a vibrant neighborhood, this property offers comfort, convenience, and all the amenities you need for a memorable stay.",
       "id": "6b4fae1c-df2c-407f-a013-25a7b253a7ca",
       "category": "room",
       "numberOfBeds": 1,
-      "numberOfBedrooms": 2,
+      "numberOfBedrooms": 3,
       "numberOfBathrooms": 1,
       "price": {
         "perNight": 277,
         "hasPromotion": true,
-        "promotionalPricePerNight": 168,
-        "cleaningFee": 47
+        "promotionalPricePerNight": 168
       },
       "location": {
         "city": "San Diego",
@@ -1861,6 +1861,7 @@
       ]
     },
     {
+      "hostMessage": "Welcome to your home away from home! Our charming house is perfect for travelers looking to experience the best of Los Angeles. Nestled in a vibrant neighborhood, this property offers comfort, convenience, and all the amenities you need for a memorable stay.",
       "id": "77979093-b428-40cf-9cca-813fb0c7b63b",
       "category": "room",
       "numberOfBeds": 3,
@@ -1869,8 +1870,7 @@
       "price": {
         "perNight": 302,
         "hasPromotion": false,
-        "promotionalPricePerNight": null,
-        "cleaningFee": 47
+        "promotionalPricePerNight": null
       },
       "location": {
         "city": "Los Angeles",
