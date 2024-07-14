@@ -14,7 +14,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
     <Provider store={store}>
       <PersistGate loading={<Loader fixed />} persistor={persistor}>
         <RouterProvider router={router} fallbackElement={<Loader fixed />} />
-        <Toaster position="top-right" richColors closeButton />
+        <Toaster richColors />
       </PersistGate>
     </Provider>
   </React.StrictMode>
