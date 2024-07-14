@@ -1,21 +1,28 @@
 import { Booking } from "@/models/booking";
 import { RootState } from "@/store";
-import { addBooking, removeBooking } from "@/store/slices/bookings";
+import {
+  addBooking,
+  editBooking,
+  removeBooking,
+} from "@/store/slices/bookings";
+import { removeTimeFromDate } from "@/utils/dates";
 import { useDispatch, useSelector } from "react-redux";
 
 const useBookingReservation = () => {
   const dispatch = useDispatch();
 
-  const bookings =
+  const allBookings =
     useSelector((state: RootState) => state.bookings.bookings) || [];
 
   const verifyIfPropertyIsAvailable = (
     propertyId: string,
     checkIn: string,
-    checkOut: string
+    checkOut: string,
+    bookings: Booking[] = allBookings
   ) => {
-    const checkInDate = new Date(checkIn);
-    const checkOutDate = new Date(checkOut);
+    const checkInDate = removeTimeFromDate(new Date(checkIn));
+
+    const checkOutDate = removeTimeFromDate(new Date(checkOut));
 
     return !bookings.some((booking) => {
       if (booking.propertyId !== propertyId) return false;
@@ -23,9 +30,11 @@ const useBookingReservation = () => {
       const bookingCheckInDate = new Date(booking.checkIn);
       const bookingCheckOutDate = new Date(booking.checkOut);
 
-      return (
-        checkInDate < bookingCheckOutDate && checkOutDate > bookingCheckInDate
-      );
+      const isOverlapping =
+        checkInDate <= bookingCheckOutDate &&
+        checkOutDate >= bookingCheckInDate;
+
+      return isOverlapping;
     });
   };
 
@@ -39,11 +48,19 @@ const useBookingReservation = () => {
       throw new Error("Property is already booked between these dates");
     }
 
+    const checkInWithoutTime = removeTimeFromDate(
+      new Date(checkIn)
+    ).toISOString();
+
+    const checkOutDateWithoutTime = removeTimeFromDate(
+      new Date(checkOut)
+    ).toISOString();
+
     dispatch(
       addBooking({
         propertyId,
-        checkIn,
-        checkOut,
+        checkIn: checkInWithoutTime,
+        checkOut: checkOutDateWithoutTime,
         price,
       })
     );
@@ -53,11 +70,45 @@ const useBookingReservation = () => {
     dispatch(removeBooking(id));
   };
 
+  const handleEditBooking = (updatedBooking: Booking) => {
+    const filteredBookings = allBookings.filter(
+      (book) => book.id !== updatedBooking.id
+    );
+
+    if (
+      !verifyIfPropertyIsAvailable(
+        updatedBooking.propertyId,
+        updatedBooking.checkIn,
+        updatedBooking.checkOut,
+        filteredBookings
+      )
+    ) {
+      throw new Error("Property is already booked between these dates");
+    }
+
+    const checkInWithoutTime = removeTimeFromDate(
+      new Date(updatedBooking.checkIn)
+    ).toISOString();
+
+    const checkOutDateWithoutTime = removeTimeFromDate(
+      new Date(updatedBooking.checkOut)
+    ).toISOString();
+
+    const formattedBooking = {
+      ...updatedBooking,
+      checkIn: checkInWithoutTime,
+      checkOut: checkOutDateWithoutTime,
+    };
+
+    dispatch(editBooking(formattedBooking));
+  };
+
   return {
-    bookings,
+    bookings: allBookings,
     verifyIfPropertyIsAvailable,
     handleAddBooking,
     handleRemoveBooking,
+    handleEditBooking,
   };
 };
 
