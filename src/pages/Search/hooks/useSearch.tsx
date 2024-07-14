@@ -1,4 +1,4 @@
-import useBookingReservation from "@/hooks/useBookingReservation";
+import useBookingHandlers from "@/hooks/useBookingHandlers";
 import { useGetPropertiesQuery } from "@/services/api-service";
 import { addDays } from "date-fns";
 import { useSearchParams } from "react-router-dom";
@@ -23,7 +23,7 @@ const useSearchData = () => {
 };
 
 const useSearch = () => {
-  const { verifyIfPropertyIsAvailable } = useBookingReservation();
+  const { verifyIfPropertyIsAvailable } = useBookingHandlers();
 
   const { checkIn, checkOut, city, numOfAdults, numOfChildren } =
     useSearchData();

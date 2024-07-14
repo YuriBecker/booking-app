@@ -1,20 +1,15 @@
-import PropertyCard from "@/components/property-card";
 import { Loader } from "@/components/ui/loader";
 import NoData from "@/components/ui/no-data";
 import routerPaths from "@/router/paths";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import useSearch from "./hooks/useSearch";
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb";
+import SearchBreadCrumb from "./components/SearchBreadcrumb";
+import PropertyCard from "./components/PropertyCard";
+import useBookProperty from "./hooks/useBookProperty";
 
 const SearchPage = () => {
   const navigate = useNavigate();
+
   const {
     isLoading,
     isSuccess,
@@ -24,6 +19,11 @@ const SearchPage = () => {
     checkIn,
     checkOut,
   } = useSearch();
+
+  const { handleBookProperty } = useBookProperty({
+    checkIn,
+    checkOut,
+  });
 
   if (isLoading) {
     return <Loader fixed />;
@@ -43,19 +43,7 @@ const SearchPage = () => {
   if (isSuccess) {
     return (
       <div className="container mx-auto px-8 mt-6 lg:mt-14 pb-8">
-        <Breadcrumb className="mb-4">
-          <BreadcrumbList>
-            <BreadcrumbItem>
-              <BreadcrumbLink asChild>
-                <Link to={routerPaths.home}>Home</Link>
-              </BreadcrumbLink>
-            </BreadcrumbItem>
-            <BreadcrumbSeparator />
-            <BreadcrumbItem>
-              <BreadcrumbPage>Search Results</BreadcrumbPage>
-            </BreadcrumbItem>
-          </BreadcrumbList>
-        </Breadcrumb>
+        <SearchBreadCrumb />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {availableProperties?.map((property) => (
@@ -64,6 +52,7 @@ const SearchPage = () => {
               property={property}
               checkIn={checkIn}
               checkOut={checkOut}
+              handleBookProperty={handleBookProperty}
             />
           ))}
         </div>
