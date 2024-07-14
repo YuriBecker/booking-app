@@ -25,8 +25,8 @@ const formSchema = z
     city: z.string().optional(),
     checkIn: z.date().optional(),
     checkOut: z.date().optional(),
-    numOfAdults: z.number().optional(),
-    numOfChildren: z.number().optional(),
+    numOfAdults: z.coerce.number(),
+    numOfChildren: z.coerce.number(),
   })
   .superRefine(({ checkIn, checkOut }, ctx) => {
     if (checkIn && checkOut && checkIn > checkOut) {
@@ -36,11 +36,20 @@ const formSchema = z
         path: ["checkOut"],
       });
     }
+  })
+  .superRefine(({ numOfChildren, numOfAdults }, ctx) => {
+    if (numOfChildren && numOfAdults < 1) {
+      ctx.addIssue({
+        code: "custom",
+        message: "Children must be accompanied by an adult",
+        path: ["numOfAdults"],
+      });
+    }
   });
 
 const cityOptions = [
   {
-    value: "all",
+    value: "",
     label: "I'm flexible",
   },
   {
@@ -74,11 +83,11 @@ const HomePage = () => {
     navigate({
       pathname: routerPaths.search,
       search: createSearchParams({
-        city: values.city || "all",
+        city: values.city || "",
         checkIn: values.checkIn?.toISOString() || "",
         checkOut: values.checkOut?.toISOString() || "",
-        numOfAdults: values.numOfAdults?.toString() || "1",
-        numOfChildren: values.numOfChildren?.toString() || "0",
+        numOfAdults: values.numOfAdults?.toString() || "",
+        numOfChildren: values.numOfChildren?.toString() || "",
       }).toString(),
     });
   }
@@ -182,9 +191,6 @@ const HomePage = () => {
                             placeholder="Add adults"
                             min={1}
                             {...field}
-                            onChange={(value) =>
-                              field.onChange(value.target.valueAsNumber)
-                            }
                           />
                         </FormControl>
                         <FormMessage />
@@ -206,9 +212,6 @@ const HomePage = () => {
                             placeholder="Add children"
                             min={0}
                             {...field}
-                            onChange={(value) =>
-                              field.onChange(value.target.valueAsNumber)
-                            }
                           />
                         </FormControl>
                         <FormMessage />
