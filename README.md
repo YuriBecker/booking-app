@@ -1,30 +1,77 @@
-# React + TypeScript + Vite
+# Booking App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A web application that allows guests to selects a start and end date and submits a reservation on a property.
 
-Currently, two official plugins are available:
+## Functionalities
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Create a booking
+- Read a booking
+- Update a booking
+- Delete a booking
+- Responsive Design
+- Overlapping booking prevention
+- CI testing environment
 
-## Expanding the ESLint configuration
+## Built With
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- [Vite](https://vitejs.dev/) - Next Generation Frontend Tooling
+- [React](https://reactjs.org/) - JavaScript library for building user interfaces
+- [React Router](https://github.com/ReactTraining/react-router) - Routing library
+- [ESLint](https://eslint.org/) - JavaScript Linter
+- [Redux Toolkit](https://redux.js.org/) - Toolset for efficient Redux development
+- [RTK Query](https://github.com/redux-saga/redux-saga) - Powerful data fetching and caching tool
+- [Redux Persist](https://github.com/rt2zz/redux-persist) - Persist and Rehydrate a Redux Store.
+- [Shadcn/ui](https://ui.shadcn.com/) - UI Components Helper
+- [Lottie](https://airbnb.io/lottie/#/) - Library for adding animations
+- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
+- [Vitest](https://jestjs.io/) - JavaScript Testing Framework
+- [React Testing Library](https://github.com/testing-library/react-testing-library) - JavaScript Testing utility
+- [Cypress](https://www.cypress.io/) - JavaScript End-to-End Testing Framework
 
-- Configure the top-level `parserOptions` property like this:
+## Running the app
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+```bash
+  npm install
+  npm run dev
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Color documentation
+
+| Color     | Hexadecimal                                                      |
+| --------- | ---------------------------------------------------------------- |
+| Primary   | ![#40CAA1](https://via.placeholder.com/10/40CAA1?text=+) #40CAA1 |
+| Secondary | ![#2D2AA5](https://via.placeholder.com/10/2D2AA5?text=+) #2D2AA5 |
+
+## Screenshots
+
+![App Screenshot 1](https://github.com/user-attachments/assets/1e671a5a-fb12-43f2-aadd-3528a82937d5)
+
+![App Screenshot 2](https://github.com/user-attachments/assets/2d933402-3c94-4a26-a3b0-197b13b0658a)
+
+## Running the app
+
+Installing dependencies
+
+```bash
+  npm install
+```
+
+Running the ap
+
+```bash
+  npm run dev
+```
+
+## Rodando os testes
+
+Unit and Snapshot tests
+
+```bash
+  npm run test
+```
+
+E2E tests
+
+```bash
+  npm run test:e2e
+```
