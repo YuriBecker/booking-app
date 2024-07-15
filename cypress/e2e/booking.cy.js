@@ -1,5 +1,16 @@
+import { propertiesMock } from "../fixtures/properties-mock";
+
 describe("booking", () => {
   beforeEach(() => {
+    //Mock API
+    cy.intercept(
+      {
+        method: "GET",
+        url: "/properties*",
+      },
+      propertiesMock
+    ).as("getProperties");
+
     //Go direct to search result of a fixed search
     cy.visit(
       "http://localhost:3000/search?city=&checkIn=2024-07-14T03%3A00%3A00.000Z&checkOut=2024-07-19T03%3A00%3A00.000Z&numOfAdults=1&numOfChildren=0"
@@ -18,6 +29,9 @@ describe("booking", () => {
     //Verify the url
     cy.url().should("include", "/bookings");
 
+    //Await for the API call
+    cy.wait("@getProperties");
+
     //Verify list length
     cy.get('[data-cy="booking-card"]').should("have.length", 1);
   });
@@ -30,6 +44,9 @@ describe("booking", () => {
       .find('[data-cy="property-card-btn"]')
       .click();
     cy.get('[data-cy="property-card-reserve-btn"]').click();
+
+    //Await for the API call
+    cy.wait("@getProperties");
 
     //Click delete button
     cy.get('[data-cy="booking-card-delete-btn"]').click();
@@ -49,6 +66,9 @@ describe("booking", () => {
       .find('[data-cy="property-card-btn"]')
       .click();
     cy.get('[data-cy="property-card-reserve-btn"]').click();
+
+    //Await for the API call
+    cy.wait("@getProperties");
 
     //Click edit button
     cy.get('[data-cy="booking-card-edit-btn"]').click();

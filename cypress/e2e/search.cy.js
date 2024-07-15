@@ -1,5 +1,6 @@
 describe("home search page", () => {
   beforeEach(() => {
+    //Go to the home page
     cy.visit("http://localhost:3000");
   });
 
