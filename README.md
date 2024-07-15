@@ -30,9 +30,29 @@ A web application that allows guests to selects a start and end date and submits
 
 ## Running the app
 
+Installing dependencies
+
 ```bash
   npm install
+```
+
+Starting the app
+
+```bash
   npm run dev
+```
+## Running the tests
+
+Unit and Snapshot tests
+
+```bash
+  npm run test
+```
+
+E2E tests
+
+```bash
+  npm run test:e2e
 ```
 
 ## Color documentation
@@ -48,30 +68,6 @@ A web application that allows guests to selects a start and end date and submits
 
 ![App Screenshot 2](https://github.com/user-attachments/assets/2d933402-3c94-4a26-a3b0-197b13b0658a)
 
-## Running the app
+![App Screenshot 3](https://github.com/user-attachments/assets/ff11d353-a10c-473c-9a43-6d2bc2efd417)
 
-Installing dependencies
 
-```bash
-  npm install
-```
-
-Running the ap
-
-```bash
-  npm run dev
-```
-
-## Rodando os testes
-
-Unit and Snapshot tests
-
-```bash
-  npm run test
-```
-
-E2E tests
-
-```bash
-  npm run test:e2e
-```
