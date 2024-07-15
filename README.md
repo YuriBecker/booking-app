@@ -57,6 +57,8 @@ E2E tests
 
 ## Color documentation
 
+Reference guideline -> https://www.hostfully.com/media-kit/
+
 | Color     | Hexadecimal                                                      |
 | --------- | ---------------------------------------------------------------- |
 | Primary   | ![#40CAA1](https://via.placeholder.com/10/40CAA1?text=+) #40CAA1 |
