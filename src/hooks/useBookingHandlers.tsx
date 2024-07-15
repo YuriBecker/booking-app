@@ -14,12 +14,17 @@ const useBookingHandlers = () => {
   const allBookings =
     useSelector((state: RootState) => state.bookings.bookings) || [];
 
-  const verifyIfPropertyIsAvailable = (
-    propertyId: string,
-    checkIn: string,
-    checkOut: string,
-    bookings: Booking[] = allBookings
-  ) => {
+  const verifyIfPropertyIsAvailable = ({
+    propertyId,
+    checkIn,
+    checkOut,
+    bookings = allBookings,
+  }: {
+    propertyId: Booking["propertyId"];
+    checkIn: Booking["checkIn"];
+    checkOut: Booking["checkOut"];
+    bookings?: Booking[];
+  }) => {
     const checkInDate = removeTimeFromDate(new Date(checkIn));
 
     const checkOutDate = removeTimeFromDate(new Date(checkOut));
@@ -38,13 +43,18 @@ const useBookingHandlers = () => {
     });
   };
 
-  const handleAddBooking = (
-    propertyId: string,
-    checkIn: string,
-    checkOut: string,
-    price: number
-  ) => {
-    if (!verifyIfPropertyIsAvailable(propertyId, checkIn, checkOut)) {
+  const handleAddBooking = ({
+    propertyId,
+    checkIn,
+    checkOut,
+    price,
+  }: {
+    propertyId: Booking["propertyId"];
+    checkIn: Booking["checkIn"];
+    checkOut: Booking["checkOut"];
+    price: Booking["price"];
+  }) => {
+    if (!verifyIfPropertyIsAvailable({ propertyId, checkIn, checkOut })) {
       throw new Error("Property is already booked between these dates");
     }
 
@@ -76,12 +86,12 @@ const useBookingHandlers = () => {
     );
 
     if (
-      !verifyIfPropertyIsAvailable(
-        updatedBooking.propertyId,
-        updatedBooking.checkIn,
-        updatedBooking.checkOut,
-        filteredBookings
-      )
+      !verifyIfPropertyIsAvailable({
+        propertyId: updatedBooking.propertyId,
+        checkIn: updatedBooking.checkIn,
+        checkOut: updatedBooking.checkOut,
+        bookings: filteredBookings,
+      })
     ) {
       throw new Error("Property is already booked between these dates");
     }
