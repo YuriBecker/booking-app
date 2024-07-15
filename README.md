@@ -18,6 +18,7 @@ A web application that allows guests to selects a start and end date and submits
 - [React](https://reactjs.org/) - JavaScript library for building user interfaces
 - [React Router](https://github.com/ReactTraining/react-router) - Routing library
 - [ESLint](https://eslint.org/) - JavaScript Linter
+- [JSON Server](https://www.npmjs.com/package/json-server) - Fake REST API helper
 - [Redux Toolkit](https://redux.js.org/) - Toolset for efficient Redux development
 - [RTK Query](https://github.com/redux-saga/redux-saga) - Powerful data fetching and caching tool
 - [Redux Persist](https://github.com/rt2zz/redux-persist) - Persist and Rehydrate a Redux Store.
