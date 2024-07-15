@@ -12,8 +12,7 @@
     /* Path alises */
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"],
-      "public": ["./public"]
+      "@/*": ["./src/*"]
     }
   },
   "include": ["vite.config.ts"]

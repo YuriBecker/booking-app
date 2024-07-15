@@ -26,12 +26,16 @@
     /* Path alises */
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"],
-      "public": ["./public"]
+      "@/*": ["./src/*"]
     },
 
     // Add types to global scope
-    "types": ["vitest/globals", "@testing-library/jest-dom", "cypress"]
+    "types": [
+      "vitest/globals",
+      "@testing-library/jest-dom",
+      "cypress",
+      "@testing-library/cypress"
+    ]
   },
   "include": ["src", " setupTests.ts"]
 }
