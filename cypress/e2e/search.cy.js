@@ -53,7 +53,7 @@ describe("home search page", () => {
     cy.findByText("20").click();
     cy.get("body").type("{esc}");
 
-    //Verify the number of adults and children
+    //Verify the initial number of adults and children
     cy.findByRole("spinbutton", {
       name: /number of adults/i,
     }).should("have.value", "1");

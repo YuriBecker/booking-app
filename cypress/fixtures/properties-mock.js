@@ -1952,3 +1952,5 @@ export const propertiesMock = [
     ],
   },
 ];
+
+export const propertyMock = propertiesMock[0];
