@@ -19,6 +19,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Start json-server
+        run: npm run server &
+
       - name: Run Cypress tests
         uses: cypress-io/github-action@v6
         with:
