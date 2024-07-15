@@ -1,5 +1,5 @@
 import Lottie from "react-lottie";
-import animationData from "public/loader-animation.json";
+import animationData from "@/assets/loader-animation.json";
 
 type Props = {
   size?: number;

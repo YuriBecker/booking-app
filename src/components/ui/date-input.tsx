@@ -12,12 +12,12 @@ import { SelectSingleEventHandler } from "react-day-picker";
 
 interface Props {
   onChange: SelectSingleEventHandler;
-  value?: Date;
-  id?: string;
+  value: Date;
   placeholder: string;
+  dataCy?: string;
 }
 
-export function DateField({ placeholder, id, value, onChange }: Props) {
+export function DateInput({ placeholder, value, onChange, dataCy }: Props) {
   return (
     <Popover>
       <PopoverTrigger asChild>
@@ -27,7 +27,7 @@ export function DateField({ placeholder, id, value, onChange }: Props) {
             "w-full justify-start text-left font-normal",
             !value && "text-muted-foreground"
           )}
-          id={id}
+          data-cy={dataCy}
         >
           <CalendarIcon className="mr-2 h-4 w-4" />
           {value ? format(value, "PPP") : <span>{placeholder}</span>}

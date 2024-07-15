@@ -1,5 +1,5 @@
 import Lottie from "react-lottie";
-import animationData from "public/no-data-animation.json";
+import animationData from "@/assets/no-data-animation.json";
 import { cn } from "@/utils/tailwind";
 import { Button } from "./button";
 
