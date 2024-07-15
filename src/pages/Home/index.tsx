@@ -1,4 +1,4 @@
-import animationData from "public/vacation.json";
+import animationData from "@/assets/vacation.json";
 import Lottie from "react-lottie";
 import Illustration from "./components/Illustration";
 import SearchForm from "./components/SearchForm";

@@ -2,9 +2,9 @@ import { Booking, BookingStatus } from "@/models/booking";
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 
-export interface BookingsState {
+export type BookingsState = {
   bookings: Booking[];
-}
+};
 
 const initialState: BookingsState = {
   bookings: [],

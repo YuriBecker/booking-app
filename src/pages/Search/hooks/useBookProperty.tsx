@@ -22,7 +22,12 @@ const useBookProperty = ({ checkIn, checkOut }: Props) => {
           : property.price.perNight
       );
 
-      handleAddBooking(property.id, checkIn, checkOut, price);
+      handleAddBooking({
+        propertyId: property.id,
+        checkIn,
+        checkOut,
+        price,
+      });
 
       toast.success("Property booked successfully");
 

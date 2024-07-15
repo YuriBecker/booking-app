@@ -1,4 +1,4 @@
-import { Property } from "@/models/property";
+import { Button } from "@/components/ui/button";
 import {
   Drawer,
   DrawerClose,
@@ -8,8 +8,11 @@ import {
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger,
-} from "./ui/drawer";
-import { Button } from "./ui/button";
+} from "@/components/ui/drawer";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import { Property } from "@/models/property";
+import { formatCurrency, formatDate } from "@/utils/formatters";
+import { cn } from "@/utils/tailwind";
 import {
   BathIcon,
   BedDoubleIcon,
@@ -19,9 +22,6 @@ import {
   StarIcon,
   User,
 } from "lucide-react";
-import { formatCurrency, formatDate } from "@/utils/formatters";
-import { cn } from "@/utils/tailwind";
-import { ScrollArea } from "./ui/scroll-area";
 
 interface Props {
   property: Property;
@@ -30,7 +30,7 @@ interface Props {
   handleBookProperty: () => void;
 }
 
-const BookDrawer = ({
+const BookDrawerButton = ({
   property,
   checkInDate,
   checkOutDate,
@@ -39,7 +39,11 @@ const BookDrawer = ({
   return (
     <Drawer>
       <DrawerTrigger asChild>
-        <Button size="lg" className="w-full hover:bg-secondary">
+        <Button
+          size="lg"
+          className="w-full hover:bg-secondary"
+          data-cy="property-card-btn"
+        >
           Book Now
         </Button>
       </DrawerTrigger>
@@ -151,7 +155,12 @@ const BookDrawer = ({
             </div>
           </ScrollArea>
           <DrawerFooter>
-            <Button onClick={handleBookProperty}>Reserve</Button>
+            <Button
+              onClick={handleBookProperty}
+              data-cy="property-card-reserve-btn"
+            >
+              Reserve
+            </Button>
             <DrawerClose asChild>
               <Button variant="outline">Cancel</Button>
             </DrawerClose>
@@ -162,4 +171,4 @@ const BookDrawer = ({
   );
 };
 
-export default BookDrawer;
+export default BookDrawerButton;

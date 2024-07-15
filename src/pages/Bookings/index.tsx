@@ -1,17 +1,9 @@
-import BookCard from "@/components/book-card";
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb";
 import NoData from "@/components/ui/no-data";
 import useBookingHandlers from "@/hooks/useBookingHandlers";
 import routerPaths from "@/router/paths";
-
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import BookingsBreadcrumb from "./components/Breadcrumb";
+import BookCard from "./components/BookCard";
 
 const BookingsPage = () => {
   const navigate = useNavigate();
@@ -31,20 +23,11 @@ const BookingsPage = () => {
   }
 
   return (
-    <div className="container mx-auto px-8 mt-6 lg:mt-14 pb-8">
-      <Breadcrumb className="mb-4">
-        <BreadcrumbList>
-          <BreadcrumbItem>
-            <BreadcrumbLink asChild>
-              <Link to={routerPaths.home}>Home</Link>
-            </BreadcrumbLink>
-          </BreadcrumbItem>
-          <BreadcrumbSeparator />
-          <BreadcrumbItem>
-            <BreadcrumbPage>My Bookings</BreadcrumbPage>
-          </BreadcrumbItem>
-        </BreadcrumbList>
-      </Breadcrumb>
+    <div
+      className="container mx-auto px-8 mt-6 lg:mt-14 pb-8"
+      data-cy="bookings-list"
+    >
+      <BookingsBreadcrumb />
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {bookings?.map((book) => (

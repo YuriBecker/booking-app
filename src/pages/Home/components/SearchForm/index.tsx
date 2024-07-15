@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { DateField } from "@/components/ui/date-input";
+import { DateInput } from "@/components/ui/date-input";
 import {
   Form,
   FormControl,
@@ -52,7 +52,11 @@ const SearchForm = ({ form, onSubmit }: Props) => {
                 Check in
               </FormLabel>
               <FormControl>
-                <DateField placeholder="Select a date" {...field} />
+                <DateInput
+                  placeholder="Select a check in"
+                  dataCy="check-in-date"
+                  {...field}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -68,7 +72,11 @@ const SearchForm = ({ form, onSubmit }: Props) => {
                 Check out
               </FormLabel>
               <FormControl>
-                <DateField placeholder="Select a date" {...field} />
+                <DateInput
+                  placeholder="Select a check out"
+                  dataCy="check-out-date"
+                  {...field}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>

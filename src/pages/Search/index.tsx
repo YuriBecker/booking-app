@@ -3,7 +3,7 @@ import NoData from "@/components/ui/no-data";
 import routerPaths from "@/router/paths";
 import { useNavigate } from "react-router-dom";
 import useSearch from "./hooks/useSearch";
-import SearchBreadCrumb from "./components/SearchBreadcrumb";
+import SearchBreadCrumb from "./components/Breadcrumb";
 import PropertyCard from "./components/PropertyCard";
 import useBookProperty from "./hooks/useBookProperty";
 
@@ -45,7 +45,10 @@ const SearchPage = () => {
       <div className="container mx-auto px-8 mt-6 lg:mt-14 pb-8">
         <SearchBreadCrumb />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+          data-cy="properties-list"
+        >
           {availableProperties?.map((property) => (
             <PropertyCard
               key={property.id}

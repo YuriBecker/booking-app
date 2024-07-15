@@ -38,7 +38,11 @@ const useSearch = () => {
 
   const allProperties = data || [];
   const availableProperties = allProperties.filter((property) =>
-    verifyIfPropertyIsAvailable(property.id, checkIn, checkOut)
+    verifyIfPropertyIsAvailable({
+      propertyId: property.id,
+      checkIn,
+      checkOut,
+    })
   );
 
   const showNoResults =

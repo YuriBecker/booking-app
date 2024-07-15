@@ -7,8 +7,12 @@ import { z } from "zod";
 export const searchFormSchema = z
   .object({
     city: z.string().optional(),
-    checkIn: z.date(),
-    checkOut: z.date(),
+    checkIn: z.date({
+      message: "Select a check in date",
+    }),
+    checkOut: z.date({
+      message: "Select a check out date",
+    }),
     numOfAdults: z.coerce.number().min(0),
     numOfChildren: z.coerce.number(),
   })

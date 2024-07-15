@@ -9,7 +9,7 @@ import { BathIcon, BedDoubleIcon, BedIcon, StarIcon } from "lucide-react";
 import { formatCurrency } from "@/utils/formatters";
 import { cn } from "@/utils/tailwind";
 import { Booking } from "@/models/booking";
-import BookDrawer from "@/components/book-drawer";
+import BookDrawerButton from "../BookDrawerButton";
 
 type Props = {
   property: Property;
@@ -25,7 +25,10 @@ const PropertyCard = ({
   handleBookProperty,
 }: Props) => {
   return (
-    <Card className="w-full max-w-md overflow-hidden flex flex-col justify-between">
+    <Card
+      className="w-full max-w-md overflow-hidden flex flex-col justify-between"
+      data-cy="property-card"
+    >
       <CardHeader className="p-0">
         <img
           className="object-cover w-full transform duration-200 hover:scale-105 rounded-t-lg aspect-[3/2] transition-all"
@@ -98,7 +101,7 @@ const PropertyCard = ({
       </CardContent>
 
       <CardFooter>
-        <BookDrawer
+        <BookDrawerButton
           property={property}
           checkInDate={checkIn}
           checkOutDate={checkOut}
