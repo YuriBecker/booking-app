@@ -46,14 +46,14 @@ describe("useBookingHandlers", () => {
     vitest.clearAllMocks();
   });
 
-  test("should return all bookings from redux store", () => {
+  it("should return all bookings from redux store", () => {
     const { result } = renderHook(() => useBookingHandlers());
 
     expect(result.current.bookings).toEqual(mockBookings);
   });
 
   describe("verifyIfPropertyIsAvailable function", () => {
-    test("should return all bookings", () => {
+    it("should return all bookings", () => {
       const { result } = renderHook(() => useBookingHandlers());
 
       expect(result.current.bookings).toEqual(mockBookings);
