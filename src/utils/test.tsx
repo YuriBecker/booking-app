@@ -6,10 +6,10 @@ import { setupStore } from "@/store";
 import type { AppStore, RootState } from "@/store";
 import { MemoryRouter } from "react-router-dom";
 
-interface ExtendedRenderOptions extends Omit<RenderOptions, "wrapper"> {
+type ExtendedRenderOptions = Omit<RenderOptions, "wrapper"> & {
   preloadedState?: Partial<RootState>;
   store?: AppStore;
-}
+};
 
 export const renderWithProviders = (
   ui: React.ReactElement,
