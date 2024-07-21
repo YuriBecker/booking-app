@@ -14,6 +14,7 @@ afterAll(() => {
   server.close();
 });
 
+// Mocking methods which are not implemented in JSDOM
 Object.defineProperty(window, "matchMedia", {
   writable: true,
   value: vi.fn().mockImplementation((query) => ({
