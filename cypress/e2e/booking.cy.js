@@ -1,7 +1,7 @@
 import { propertiesMock, propertyMock } from "../fixtures/properties-mock";
 
 const FIXED_SEARCH_URL =
-  "http://localhost:3000/search?city=&checkIn=2024-07-14T03%3A00%3A00.000Z&checkOut=2024-07-19T03%3A00%3A00.000Z&numOfAdults=1&numOfChildren=0";
+  "/search?city=&checkIn=2024-07-14T03%3A00%3A00.000Z&checkOut=2024-07-19T03%3A00%3A00.000Z&numOfAdults=1&numOfChildren=0";
 
 describe("booking", () => {
   beforeEach(() => {
@@ -9,7 +9,7 @@ describe("booking", () => {
     cy.intercept(
       {
         method: "GET",
-        url: "/properties*",
+        url: `${Cypress.env("apiUrl")}/properties*`,
       },
       propertiesMock
     ).as("getProperties");
@@ -18,7 +18,7 @@ describe("booking", () => {
     cy.intercept(
       {
         method: "GET",
-        url: "/properties/*",
+        url: `${Cypress.env("apiUrl")}/properties/*`,
       },
       propertyMock
     ).as("getProperty");
