@@ -15,6 +15,7 @@ describe("BookDrawerButton component", () => {
   beforeAll(() => {
     //Mock JsDom not implemented functions
     window.HTMLElement.prototype.setPointerCapture = vi.fn();
+    window.scrollTo = vi.fn();
   });
 
   afterAll(() => {
