@@ -9,13 +9,3 @@ exports[`Label component > renders correctly 1`] = `
   </label>
 </DocumentFragment>
 `;
-
-exports[`Label component renders correctly 1`] = `
-<DocumentFragment>
-  <label
-    class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-  >
-    Test
-  </label>
-</DocumentFragment>
-`;
