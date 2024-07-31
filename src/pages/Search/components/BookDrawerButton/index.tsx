@@ -23,12 +23,12 @@ import {
   User,
 } from "lucide-react";
 
-interface Props {
+type Props = {
   property: Property;
   checkInDate: string;
   checkOutDate: string;
   handleBookProperty: () => void;
-}
+};
 
 const BookDrawerButton = ({
   property,

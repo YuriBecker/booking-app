@@ -25,12 +25,19 @@ export type Location = {
   countryCode: string;
 };
 
-export type Price = {
-  perNight: number;
-  hasPromotion: boolean;
-  promotionalPricePerNight: number | null;
-  cleaningFee: number | null;
-};
+export type Price =
+  | {
+      perNight: number;
+      hasPromotion: true;
+      promotionalPricePerNight: number;
+      cleaningFee: number | null;
+    }
+  | {
+      perNight: number;
+      hasPromotion: false;
+      promotionalPricePerNight: null;
+      cleaningFee: number | null;
+    };
 
 export type Reviews = {
   totalScore: number;
