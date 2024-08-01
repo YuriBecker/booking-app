@@ -4,11 +4,13 @@ import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
 import {
   Popover,
+  PopoverClose,
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { cn } from "@/utils/tailwind";
 import { SelectSingleEventHandler } from "react-day-picker";
+import { useState } from "react";
 
 interface Props {
   onChange: SelectSingleEventHandler;
@@ -18,8 +20,10 @@ interface Props {
 }
 
 export function DateInput({ placeholder, value, onChange, dataCy }: Props) {
+  const [isCalendarOpen, setIsCalendarOpen] = useState(false);
+
   return (
-    <Popover>
+    <Popover open={isCalendarOpen} onOpenChange={setIsCalendarOpen}>
       <PopoverTrigger asChild>
         <Button
           variant={"outline"}
@@ -37,7 +41,10 @@ export function DateInput({ placeholder, value, onChange, dataCy }: Props) {
         <Calendar
           mode="single"
           selected={value}
-          onSelect={onChange}
+          onSelect={(day, selectedDay, activeModifiers, e) => {
+            onChange(day, selectedDay, activeModifiers, e);
+            setIsCalendarOpen(false);
+          }}
           initialFocus
           disabled={[
             {
