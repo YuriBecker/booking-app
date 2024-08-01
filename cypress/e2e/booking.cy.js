@@ -93,9 +93,7 @@ describe("booking", () => {
     cy.findByRole("button", {
       name: /go to next month/i,
     }).click();
-    cy.findByText("5").click();
-    cy.get("body").type("{esc}");
-
+    cy.findAllByText("5").first().click();
     //Edit check out date
     cy.get('[data-cy="edit-booking-dialog"]')
       .find('[data-cy="check-out-date"]')
@@ -103,8 +101,7 @@ describe("booking", () => {
     cy.findByRole("button", {
       name: /go to next month/i,
     }).click();
-    cy.findByText("10").click();
-    cy.get("body").type("{esc}");
+    cy.findAllByText("10").first().click();
 
     //Confirm edit
     cy.get('[data-cy="booking-card-confirm-edit-btn"]').click();

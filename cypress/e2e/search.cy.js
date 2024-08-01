@@ -10,16 +10,14 @@ describe("home search page", () => {
     cy.findByRole("button", {
       name: /go to next month/i,
     }).click();
-    cy.findByText("10").click();
-    cy.get("body").type("{esc}");
+    cy.findAllByText("10").first().click();
 
     //Select wrong check out
     cy.findByText("Select a check out").click();
     cy.findByRole("button", {
       name: /go to next month/i,
     }).click();
-    cy.findByText("9").click();
-    cy.get("body").type("{esc}");
+    cy.findAllByText("9").first().click();
 
     //Try to submit
     cy.findByRole("button", {
@@ -42,16 +40,14 @@ describe("home search page", () => {
     cy.findByRole("button", {
       name: /go to next month/i,
     }).click();
-    cy.findByText("10").click();
-    cy.get("body").type("{esc}");
+    cy.findAllByText("10").first().click();
 
     //Select check out
     cy.get('[data-cy="check-out-date"]').click();
     cy.findByRole("button", {
       name: /go to next month/i,
     }).click();
-    cy.findByText("20").click();
-    cy.get("body").type("{esc}");
+    cy.findAllByText("20").first().click();
 
     //Verify the initial number of adults and children
     cy.findByRole("spinbutton", {
