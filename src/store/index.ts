@@ -11,6 +11,7 @@ import {
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import bookingsReducer from "./slices/bookings";
+import favoritesReducer from "./slices/favorites";
 import { apiService } from "@/services/api-service";
 import { rtkQueryErrorLogger } from "@/services/api-error-handler";
 import { setupListeners } from "@reduxjs/toolkit/query";
@@ -18,11 +19,12 @@ import { setupListeners } from "@reduxjs/toolkit/query";
 const persistConfig = {
   key: "root",
   storage,
-  whitelist: ["bookings"],
+  whitelist: ["bookings", "favorites"],
 };
 
 const rootReducer = combineReducers({
   bookings: bookingsReducer,
+  favorites: favoritesReducer,
   [apiService.reducerPath]: apiService.reducer,
 });
 

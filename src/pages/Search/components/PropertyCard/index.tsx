@@ -5,17 +5,26 @@ import {
   CardFooter,
   CardHeader,
 } from "@/components/ui/card";
-import { BathIcon, BedDoubleIcon, BedIcon, StarIcon } from "lucide-react";
+import {
+  BathIcon,
+  BedDoubleIcon,
+  BedIcon,
+  HeartIcon,
+  StarIcon,
+} from "lucide-react";
 import { formatCurrency } from "@/utils/formatters";
 import { cn } from "@/utils/tailwind";
 import { Booking } from "@/models/booking";
 import BookDrawerButton from "../BookDrawerButton";
+import { Button } from "@/components/ui/button";
+import useFavoriteHandlers from "@/hooks/useFavoriteHandlers";
 
 type Props = {
   property: Property;
-  checkIn: Booking["checkIn"];
-  checkOut: Booking["checkOut"];
-  handleBookProperty: (property: Property) => void;
+  checkIn?: Booking["checkIn"];
+  checkOut?: Booking["checkOut"];
+  handleBookProperty?: (property: Property) => void;
+  showBookButton?: boolean;
 };
 
 const PropertyCard = ({
@@ -23,13 +32,40 @@ const PropertyCard = ({
   checkIn,
   checkOut,
   handleBookProperty,
+  showBookButton = true,
 }: Props) => {
+  const { isFavorite, handleToggleFavorite } = useFavoriteHandlers();
+  const propertyIsFavorite = isFavorite(property.id);
+  const canBookProperty = Boolean(showBookButton && checkIn && checkOut);
+
+  const favoriteButtonLabel = propertyIsFavorite
+    ? `Remove ${property.title} from favorites`
+    : `Add ${property.title} to favorites`;
+
   return (
     <Card
       className="w-full max-w-md overflow-hidden flex flex-col justify-between"
       data-cy="property-card"
     >
-      <CardHeader className="p-0">
+      <CardHeader className="p-0 relative">
+        <Button
+          aria-label={favoriteButtonLabel}
+          aria-pressed={propertyIsFavorite}
+          data-cy="property-card-favorite-btn"
+          type="button"
+          size="icon"
+          variant="outline"
+          onClick={() => handleToggleFavorite(property)}
+          className="absolute right-3 top-3 z-10 h-9 w-9 rounded-full border-primary"
+        >
+          <HeartIcon
+            className={cn(
+              "h-5 w-5 text-primary",
+              propertyIsFavorite && "fill-primary text-primary "
+            )}
+          />
+        </Button>
+
         <img
           className="object-cover w-full transform duration-200 hover:scale-105 rounded-t-lg aspect-[3/2] transition-all"
           src={property.images[0]}
@@ -101,12 +137,18 @@ const PropertyCard = ({
       </CardContent>
 
       <CardFooter>
-        <BookDrawerButton
-          property={property}
-          checkInDate={checkIn}
-          checkOutDate={checkOut}
-          handleBookProperty={() => handleBookProperty(property)}
-        />
+        {canBookProperty ? (
+          <BookDrawerButton
+            property={property}
+            checkInDate={checkIn!}
+            checkOutDate={checkOut!}
+            handleBookProperty={() => handleBookProperty?.(property)}
+          />
+        ) : (
+          <p className="text-sm text-muted-foreground">
+            Booking is unavailable for this property.
+          </p>
+        )}
       </CardFooter>
     </Card>
   );

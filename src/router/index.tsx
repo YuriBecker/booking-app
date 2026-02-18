@@ -10,6 +10,7 @@ const HomePage = React.lazy(() => import("@/pages/Home"));
 const NotFoundPage = React.lazy(() => import("@/pages/NotFound"));
 const BookingsPage = React.lazy(() => import("@/pages/Bookings"));
 const SearchPage = React.lazy(() => import("@/pages/Search"));
+const FavoritesPage = React.lazy(() => import("@/pages/Favorites"));
 
 const router = createBrowserRouter([
   {
@@ -40,6 +41,17 @@ const router = createBrowserRouter([
       <SuspenseRouteWrapper>
         <Header />
         <BookingsPage />
+        <ScrollRestoration />
+      </SuspenseRouteWrapper>
+    ),
+    errorElement: <RouteErrorBoundary />,
+  },
+  {
+    path: routerPaths.favorites,
+    element: (
+      <SuspenseRouteWrapper>
+        <Header />
+        <FavoritesPage />
         <ScrollRestoration />
       </SuspenseRouteWrapper>
     ),

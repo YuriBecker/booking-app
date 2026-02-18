@@ -1,16 +1,19 @@
 import routerPaths from "@/router/paths";
 import { cn } from "@/utils/tailwind";
-import { House } from "lucide-react";
+import { Heart, House } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import useBookingHandlers from "@/hooks/useBookingHandlers";
+import useFavoriteHandlers from "@/hooks/useFavoriteHandlers";
 import useScrollTracking from "./hooks/useScrollTracking";
 
 const Header = () => {
   const { bookings } = useBookingHandlers();
+  const { favorites } = useFavoriteHandlers();
   const { headerRef, isScrolled } = useScrollTracking();
 
   const totalBookings = bookings.length;
+  const totalFavorites = favorites.length;
 
   return (
     <header
@@ -31,18 +34,37 @@ const Header = () => {
           />
         </Link>
 
-        <div className="relative inline-flex">
-          <Link to={routerPaths.myBookings}>
-            <Button variant="default" size="sm">
-              <House className="mr-2" /> My Bookings
-            </Button>
-          </Link>
+        <div className="flex items-center gap-3">
+          <div className="relative inline-flex">
+            <Link to={routerPaths.favorites} data-cy="header-favorites-link">
+              <Button variant="default" size="sm">
+                <Heart className="mr-2" /> Favorites
+              </Button>
+            </Link>
 
-          {totalBookings > 0 && (
-            <div className="absolute top-0 right-0 -mt-2 -mr-2 flex h-6 w-6 items-center justify-center rounded-full bg-red-500 text-xs font-bold text-red-50">
-              {totalBookings}
-            </div>
-          )}
+            {totalFavorites > 0 && (
+              <div
+                className="absolute top-0 right-0 -mt-2 -mr-2 flex h-6 w-6 items-center justify-center rounded-full bg-red-500 text-xs font-bold text-red-50"
+                data-cy="favorites-count-badge"
+              >
+                {totalFavorites}
+              </div>
+            )}
+          </div>
+
+          <div className="relative inline-flex">
+            <Link to={routerPaths.myBookings}>
+              <Button variant="default" size="sm">
+                <House className="mr-2" /> My Bookings
+              </Button>
+            </Link>
+
+            {totalBookings > 0 && (
+              <div className="absolute top-0 right-0 -mt-2 -mr-2 flex h-6 w-6 items-center justify-center rounded-full bg-red-500 text-xs font-bold text-red-50">
+                {totalBookings}
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </header>
