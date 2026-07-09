@@ -18,27 +18,27 @@ const Header = () => {
   return (
     <header
       className={cn(
-        "flex items-center h-[100px] bg-secondary sticky top-[-30px] z-50",
+        "flex items-center h-[124px] bg-secondary sticky top-[-30px] z-50 sm:h-[100px]",
         isScrolled && "shadow-lg"
       )}
       ref={headerRef}
     >
-      <div className="container mx-auto  h-[70px] sticky top-0 flex items-center justify-between gap-8">
-        <Link to={routerPaths.home}>
+      <div className="container mx-auto h-[94px] sticky top-0 flex flex-col items-center justify-center gap-3 px-8 sm:h-[70px] sm:flex-row sm:justify-between sm:gap-8">
+        <Link to={routerPaths.home} className="shrink-0">
           <img
             className={cn(
-              "w-full h-10 md:h-14 transform transition-all duration-200 hover:scale-105"
+              "h-9 w-auto md:h-14 transform transition-all duration-200 hover:scale-105"
             )}
             src="/logo.svg"
             alt="hostfully"
           />
         </Link>
 
-        <div className="flex items-center gap-3">
+        <div className="flex w-full items-center justify-center gap-3 sm:w-auto sm:justify-end">
           <div className="relative inline-flex">
             <Link to={routerPaths.favorites} data-cy="header-favorites-link">
-              <Button variant="default" size="sm">
-                <Heart className="mr-2" /> Favorites
+              <Button variant="default" size="sm" className="px-3">
+                <Heart className="mr-2 h-4 w-4" /> Favorites
               </Button>
             </Link>
 
@@ -54,8 +54,8 @@ const Header = () => {
 
           <div className="relative inline-flex">
             <Link to={routerPaths.myBookings}>
-              <Button variant="default" size="sm">
-                <House className="mr-2" /> My Bookings
+              <Button variant="default" size="sm" className="px-3">
+                <House className="mr-2 h-4 w-4" /> My Bookings
               </Button>
             </Link>
 

@@ -2,9 +2,14 @@ import useBookingHandlers from "@/hooks/useBookingHandlers";
 import { useGetPropertiesQuery } from "@/services/api-service";
 import { addDays } from "date-fns";
 import { useSearchParams } from "react-router-dom";
+import {
+  getPropertySortOption,
+  sortProperties,
+  SortOption,
+} from "../utils/sortProperties";
 
 const useSearchData = () => {
-  const [searchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
 
   const city = searchParams.get("city") || "";
   const checkIn = searchParams.get("checkIn") || new Date().toISOString();
@@ -12,6 +17,21 @@ const useSearchData = () => {
     searchParams.get("checkOut") || addDays(new Date(), 1).toISOString();
   const numOfAdults = Number(searchParams.get("numOfAdults"));
   const numOfChildren = Number(searchParams.get("numOfChildren"));
+  const sortOption = getPropertySortOption(searchParams.get("sort"));
+
+  const handleSortChange = (sortValue: SortOption) => {
+    setSearchParams((currentParams) => {
+      const nextParams = new URLSearchParams(currentParams);
+
+      if (sortValue === SortOption.RATING_DESC) {
+        nextParams.delete("sort");
+      } else {
+        nextParams.set("sort", sortValue);
+      }
+
+      return nextParams;
+    });
+  };
 
   return {
     city,
@@ -19,13 +39,23 @@ const useSearchData = () => {
     checkOut,
     numOfAdults,
     numOfChildren,
+    sortOption,
+    handleSortChange,
   };
 };
 
 const useSearch = () => {
   const { verifyIfPropertyIsAvailable } = useBookingHandlers();
 
-  const { checkIn, checkOut, city, numOfAdults, numOfChildren } =
+  const {
+    checkIn,
+    checkOut,
+    city,
+    numOfAdults,
+    numOfChildren,
+    sortOption,
+    handleSortChange,
+  } =
     useSearchData();
 
   const { isLoading, data, error, isSuccess } = useGetPropertiesQuery({
@@ -44,6 +74,10 @@ const useSearch = () => {
       checkOut,
     })
   );
+  const sortedAvailableProperties = sortProperties(
+    availableProperties,
+    sortOption
+  );
 
   const showNoResults =
     !isLoading && isSuccess && availableProperties.length === 0;
@@ -52,10 +86,12 @@ const useSearch = () => {
     isLoading,
     error,
     isSuccess,
-    availableProperties,
+    availableProperties: sortedAvailableProperties,
     showNoResults,
     checkIn,
     checkOut,
+    sortOption,
+    handleSortChange,
   };
 };
 

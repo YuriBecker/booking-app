@@ -47,7 +47,7 @@ const PropertyCard = ({
       className="w-full max-w-md overflow-hidden flex flex-col justify-between"
       data-cy="property-card"
     >
-      <CardHeader className="p-0 relative">
+      <CardHeader className="p-0 relative space-y-0">
         <Button
           aria-label={favoriteButtonLabel}
           aria-pressed={propertyIsFavorite}
@@ -67,7 +67,7 @@ const PropertyCard = ({
         </Button>
 
         <img
-          className="object-cover w-full transform duration-200 hover:scale-105 rounded-t-lg aspect-[3/2] transition-all"
+          className="block object-cover w-full transform duration-200 hover:scale-105 rounded-t-lg aspect-[3/2] transition-all"
           src={property.images[0]}
           alt={property.title}
           loading="lazy"

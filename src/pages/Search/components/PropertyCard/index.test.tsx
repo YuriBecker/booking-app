@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import PropertyCard from "./index";
 import { formatCurrency } from "@/utils/formatters";
@@ -6,6 +6,7 @@ import {
   notPromotionalPropertyMock,
   promotionalPropertyMock,
 } from "@/mocks/data";
+import { renderWithProviders } from "@/utils/test";
 
 describe("PropertyCard component", () => {
   beforeAll(() => {
@@ -25,7 +26,7 @@ describe("PropertyCard component", () => {
 
     const user = userEvent.setup();
 
-    render(
+    renderWithProviders(
       <PropertyCard
         property={promotionalPropertyMock}
         checkIn={checkIn}
@@ -106,7 +107,7 @@ describe("PropertyCard component", () => {
 
     const user = userEvent.setup();
 
-    render(
+    renderWithProviders(
       <PropertyCard
         property={notPromotionalPropertyMock}
         checkIn={checkIn}
@@ -188,7 +189,7 @@ describe("PropertyCard component", () => {
     const checkIn = new Date(2024, 1, 1).toISOString();
     const checkOut = new Date(2024, 1, 5).toISOString();
 
-    render(
+    renderWithProviders(
       <PropertyCard
         property={promotionalPropertyMock}
         checkIn={checkIn}
