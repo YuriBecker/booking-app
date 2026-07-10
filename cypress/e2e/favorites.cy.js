@@ -1,5 +1,6 @@
 import { propertiesMock, propertyMock } from "../fixtures/properties-mock";
 
+const API_URL = "http://localhost:3001";
 const FIXED_SEARCH_URL =
   "/search?city=&checkIn=2024-07-14T03%3A00%3A00.000Z&checkOut=2024-07-19T03%3A00%3A00.000Z&numOfAdults=1&numOfChildren=0";
 
@@ -10,7 +11,7 @@ describe("favorites", () => {
     cy.intercept(
       {
         method: "GET",
-        url: `${Cypress.env("apiUrl")}/properties*`,
+        url: `${API_URL}/properties*`,
       },
       propertiesMock
     ).as("getProperties");
@@ -18,7 +19,7 @@ describe("favorites", () => {
     cy.intercept(
       {
         method: "GET",
-        url: `${Cypress.env("apiUrl")}/properties/*`,
+        url: `${API_URL}/properties/*`,
       },
       propertyMock
     ).as("getProperty");
@@ -31,8 +32,8 @@ describe("favorites", () => {
     const firstPropertyTitle = propertiesMock[0].title;
 
     cy.get('[data-cy="properties-list"]')
-      .find('[data-cy="property-card"]')
-      .first()
+      .contains(firstPropertyTitle)
+      .closest('[data-cy="property-card"]')
       .find('[data-cy="property-card-favorite-btn"]')
       .click();
 
@@ -59,8 +60,8 @@ describe("favorites", () => {
     const firstPropertyTitle = propertiesMock[0].title;
 
     cy.get('[data-cy="properties-list"]')
-      .find('[data-cy="property-card"]')
-      .first()
+      .contains(firstPropertyTitle)
+      .closest('[data-cy="property-card"]')
       .find('[data-cy="property-card-favorite-btn"]')
       .click();
 

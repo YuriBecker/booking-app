@@ -1,6 +1,6 @@
 import useBookingHandlers from "@/hooks/useBookingHandlers";
 import { useGetPropertiesQuery } from "@/services/api-service";
-import { addDays } from "date-fns";
+import { addDays } from "@/utils/dates";
 import { useSearchParams } from "react-router-dom";
 import {
   getPropertySortOption,

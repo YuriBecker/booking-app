@@ -1,5 +1,5 @@
 import animationData from "@/assets/vacation.json";
-import Lottie from "react-lottie";
+import Lottie from "lottie-react/build/index.es.js";
 import Illustration from "./components/Illustration";
 import SearchForm from "./components/SearchForm";
 import useSearchForm from "./hooks/useSearchForm";
@@ -21,15 +21,10 @@ const HomePage = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6 lg:mt-12">
           <div className="h-72 sm:h-[400px] pointer-events-none">
             <Lottie
-              options={{
-                loop: true,
-                autoplay: true,
-                animationData,
-                rendererSettings: {
-                  preserveAspectRatio: "xMidYMid slice",
-                },
-              }}
-              isClickToPauseDisabled
+              animationData={animationData}
+              autoplay
+              loop
+              rendererSettings={{ preserveAspectRatio: "xMidYMid slice" }}
             />
           </div>
 

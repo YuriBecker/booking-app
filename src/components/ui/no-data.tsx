@@ -1,4 +1,4 @@
-import Lottie from "react-lottie";
+import Lottie from "lottie-react/build/index.es.js";
 import animationData from "@/assets/no-data-animation.json";
 import { cn } from "@/utils/tailwind";
 import { Button } from "./button";
@@ -9,15 +9,6 @@ type Props = {
   onClick?: () => void;
   buttonLabel?: string;
   description: string;
-};
-
-const defaultOptions = {
-  loop: false,
-  autoplay: true,
-  animationData,
-  rendererSettings: {
-    preserveAspectRatio: "xMidYMid slice",
-  },
 };
 
 const NoData = ({
@@ -40,10 +31,11 @@ const NoData = ({
 
       <div className="pointer-events-none">
         <Lottie
-          options={defaultOptions}
-          height={size}
-          width={size}
-          isClickToPauseDisabled
+          animationData={animationData}
+          autoplay
+          loop={false}
+          rendererSettings={{ preserveAspectRatio: "xMidYMid slice" }}
+          style={{ height: size, width: size }}
         />
       </div>
 

@@ -35,10 +35,13 @@ export const searchFormSchema = z
     }
   });
 
+export type SearchFormInput = z.input<typeof searchFormSchema>;
+export type SearchFormValues = z.output<typeof searchFormSchema>;
+
 const useSearchForm = () => {
   const navigate = useNavigate();
 
-  const form = useForm<z.infer<typeof searchFormSchema>>({
+  const form = useForm<SearchFormInput, unknown, SearchFormValues>({
     resolver: zodResolver(searchFormSchema),
     defaultValues: {
       numOfAdults: 1,
@@ -46,7 +49,7 @@ const useSearchForm = () => {
     },
   });
 
-  function onSubmit(values: z.infer<typeof searchFormSchema>) {
+  function onSubmit(values: SearchFormValues) {
     navigate({
       pathname: routerPaths.search,
       search: createSearchParams({

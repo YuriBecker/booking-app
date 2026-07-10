@@ -13,7 +13,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <Provider store={store}>
       <PersistGate loading={<Loader fixed />} persistor={persistor}>
-        <RouterProvider router={router} fallbackElement={<Loader fixed />} />
+        <RouterProvider router={router} />
         <Toaster richColors />
       </PersistGate>
     </Provider>

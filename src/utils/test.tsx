@@ -19,7 +19,7 @@ export const renderWithProviders = (
     ...renderOptions
   }: ExtendedRenderOptions = {}
 ) => {
-  function AllTheProviders({ children }: PropsWithChildren): JSX.Element {
+  function AllTheProviders({ children }: PropsWithChildren): React.JSX.Element {
     return (
       <Provider store={store}>
         <MemoryRouter>{children}</MemoryRouter>

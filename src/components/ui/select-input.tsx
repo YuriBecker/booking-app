@@ -36,6 +36,8 @@ export function SelectField({
   placeholder,
 }: Props) {
   const [open, setOpen] = React.useState(false);
+  const generatedId = React.useId();
+  const listboxId = `${id ?? generatedId}-listbox`;
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
@@ -43,6 +45,7 @@ export function SelectField({
         <Button
           variant="outline"
           role="combobox"
+          aria-controls={listboxId}
           aria-expanded={open}
           className="w-full justify-between"
           id={id}
@@ -62,7 +65,7 @@ export function SelectField({
           <CommandInput placeholder="Search city..." />
           <CommandEmpty>No city found.</CommandEmpty>
           <CommandGroup>
-            <CommandList>
+            <CommandList id={listboxId}>
               {options.map((city) => (
                 <CommandItem
                   key={city.value}

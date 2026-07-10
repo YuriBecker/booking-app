@@ -9,7 +9,7 @@ import {
   REGISTER,
   REHYDRATE,
 } from "redux-persist";
-import storage from "redux-persist/lib/storage";
+import storage from "./storage";
 import bookingsReducer from "./slices/bookings";
 import favoritesReducer from "./slices/favorites";
 import { apiService } from "@/services/api-service";

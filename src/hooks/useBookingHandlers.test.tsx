@@ -1,8 +1,8 @@
 import useBookingHandlers from "@/hooks/useBookingHandlers";
 import { bookingMock, bookingsMock } from "@/mocks/data";
+import { addDays } from "@/utils/dates";
 
 import { renderHook } from "@testing-library/react";
-import { addDays } from "date-fns";
 
 vi.mock("react-redux", () => ({
   useDispatch: vitest.fn(),

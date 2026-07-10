@@ -14,7 +14,7 @@ import { Button } from "@/components/ui/button";
 const DeleteBookingButton = ({ onDelete }: { onDelete: () => void }) => {
   return (
     <AlertDialog>
-      <AlertDialogTrigger>
+      <AlertDialogTrigger asChild>
         <Button
           size="lg"
           variant="destructive"

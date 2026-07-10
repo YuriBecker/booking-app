@@ -79,6 +79,7 @@ const SearchPage = () => {
                   <Button
                     type="button"
                     role="radio"
+                    tabIndex={0}
                     aria-checked={sortOption === option.value}
                     aria-label={SORT_DESCRIPTION_BY_OPTION[option.value]}
                     aria-describedby={`search-results-sort-${option.value}-tooltip`}

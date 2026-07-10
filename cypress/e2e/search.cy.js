@@ -1,3 +1,5 @@
+const API_URL = "http://localhost:3001";
+
 describe("home search page", () => {
   beforeEach(() => {
     //Go to the home page
@@ -8,14 +10,14 @@ describe("home search page", () => {
     //Select check in
     cy.findByText("Select a check in").click();
     cy.findByRole("button", {
-      name: /go to next month/i,
+      name: /go to the next month/i,
     }).click();
     cy.findAllByText("10").first().click();
 
     //Select wrong check out
     cy.findByText("Select a check out").click();
     cy.findByRole("button", {
-      name: /go to next month/i,
+      name: /go to the next month/i,
     }).click();
     cy.findAllByText("9").first().click();
 
@@ -38,14 +40,14 @@ describe("home search page", () => {
     //Select check in
     cy.get('[data-cy="check-in-date"]').click();
     cy.findByRole("button", {
-      name: /go to next month/i,
+      name: /go to the next month/i,
     }).click();
     cy.findAllByText("10").first().click();
 
     //Select check out
     cy.get('[data-cy="check-out-date"]').click();
     cy.findByRole("button", {
-      name: /go to next month/i,
+      name: /go to the next month/i,
     }).click();
     cy.findAllByText("20").first().click();
 
@@ -181,7 +183,7 @@ describe("search results sorting", () => {
     cy.intercept(
       {
         method: "GET",
-        url: `${Cypress.env("apiUrl")}/properties*`,
+        url: `${API_URL}/properties*`,
       },
       searchResultsProperties
     ).as("getProperties");

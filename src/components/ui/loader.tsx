@@ -1,19 +1,10 @@
-import Lottie from "react-lottie";
+import Lottie from "lottie-react/build/index.es.js";
 import animationData from "@/assets/loader-animation.json";
 
 type Props = {
   size?: number;
   className?: string;
   fixed?: boolean;
-};
-
-const defaultOptions = {
-  loop: true,
-  autoplay: true,
-  animationData,
-  rendererSettings: {
-    preserveAspectRatio: "xMidYMid slice",
-  },
 };
 
 export const Loader = ({ size = 120, fixed }: Props) => {
@@ -24,10 +15,11 @@ export const Loader = ({ size = 120, fixed }: Props) => {
   return (
     <div className={containerClass}>
       <Lottie
-        options={defaultOptions}
-        height={size}
-        width={size}
-        isClickToPauseDisabled
+        animationData={animationData}
+        autoplay
+        loop
+        rendererSettings={{ preserveAspectRatio: "xMidYMid slice" }}
+        style={{ height: size, width: size }}
       />
     </div>
   );

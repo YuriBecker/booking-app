@@ -1,5 +1,6 @@
 import { propertiesMock, propertyMock } from "../fixtures/properties-mock";
 
+const API_URL = "http://localhost:3001";
 const FIXED_SEARCH_URL =
   "/search?city=&checkIn=2024-07-14T03%3A00%3A00.000Z&checkOut=2024-07-19T03%3A00%3A00.000Z&numOfAdults=1&numOfChildren=0";
 
@@ -9,7 +10,7 @@ describe("booking", () => {
     cy.intercept(
       {
         method: "GET",
-        url: `${Cypress.env("apiUrl")}/properties*`,
+        url: `${API_URL}/properties*`,
       },
       propertiesMock
     ).as("getProperties");
@@ -18,7 +19,7 @@ describe("booking", () => {
     cy.intercept(
       {
         method: "GET",
-        url: `${Cypress.env("apiUrl")}/properties/*`,
+        url: `${API_URL}/properties/*`,
       },
       propertyMock
     ).as("getProperty");
@@ -91,7 +92,7 @@ describe("booking", () => {
       .find('[data-cy="check-in-date"]')
       .click();
     cy.findByRole("button", {
-      name: /go to next month/i,
+      name: /go to the next month/i,
     }).click();
     cy.findAllByText("5").first().click();
     //Edit check out date
@@ -99,7 +100,7 @@ describe("booking", () => {
       .find('[data-cy="check-out-date"]')
       .click();
     cy.findByRole("button", {
-      name: /go to next month/i,
+      name: /go to the next month/i,
     }).click();
     cy.findAllByText("10").first().click();
 

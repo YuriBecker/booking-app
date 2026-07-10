@@ -12,13 +12,15 @@ import { Input } from "@/components/ui/input";
 import { SelectField } from "@/components/ui/select-input";
 import { Search } from "lucide-react";
 import { UseFormReturn } from "react-hook-form";
-import { z } from "zod";
-import { searchFormSchema } from "../../hooks/useSearchForm";
+import type {
+  SearchFormInput,
+  SearchFormValues,
+} from "../../hooks/useSearchForm";
 import { selectCityOptions } from "../../constants/city-options";
 
 type Props = {
-  form: UseFormReturn<z.infer<typeof searchFormSchema>>;
-  onSubmit: (values: z.infer<typeof searchFormSchema>) => void;
+  form: UseFormReturn<SearchFormInput, unknown, SearchFormValues>;
+  onSubmit: (values: SearchFormValues) => void;
 };
 
 const SearchForm = ({ form, onSubmit }: Props) => {
@@ -93,7 +95,17 @@ const SearchForm = ({ form, onSubmit }: Props) => {
                   Number of adults
                 </FormLabel>
                 <FormControl>
-                  <Input type="number" placeholder="Add adults" {...field} />
+                  <Input
+                    type="number"
+                    placeholder="Add adults"
+                    {...field}
+                    value={
+                      typeof field.value === "string" ||
+                      typeof field.value === "number"
+                        ? field.value
+                        : ""
+                    }
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -109,7 +121,17 @@ const SearchForm = ({ form, onSubmit }: Props) => {
                   Number of children
                 </FormLabel>
                 <FormControl>
-                  <Input type="number" placeholder="Add children" {...field} />
+                  <Input
+                    type="number"
+                    placeholder="Add children"
+                    {...field}
+                    value={
+                      typeof field.value === "string" ||
+                      typeof field.value === "number"
+                        ? field.value
+                        : ""
+                    }
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>

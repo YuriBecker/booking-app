@@ -10,7 +10,6 @@
     "noEmit": true,
 
     /* Path alises */
-    "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
     }

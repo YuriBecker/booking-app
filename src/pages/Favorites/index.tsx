@@ -2,8 +2,8 @@ import NoData from "@/components/ui/no-data";
 import { DateInput } from "@/components/ui/date-input";
 import useFavoriteHandlers from "@/hooks/useFavoriteHandlers";
 import routerPaths from "@/router/paths";
-import { addDays } from "date-fns";
-import { SelectSingleEventHandler } from "react-day-picker";
+import { addDays } from "@/utils/dates";
+import type { OnSelectHandler } from "react-day-picker";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import PropertyCard from "../Search/components/PropertyCard";
@@ -21,7 +21,7 @@ const FavoritesPage = () => {
   });
   const showNoResults = favorites.length === 0;
 
-  const handleCheckInChange: SelectSingleEventHandler = (selectedDay) => {
+  const handleCheckInChange: OnSelectHandler<Date | undefined> = (selectedDay) => {
     if (!selectedDay) {
       return;
     }
@@ -33,7 +33,7 @@ const FavoritesPage = () => {
     }
   };
 
-  const handleCheckOutChange: SelectSingleEventHandler = (selectedDay) => {
+  const handleCheckOutChange: OnSelectHandler<Date | undefined> = (selectedDay) => {
     if (!selectedDay) {
       return;
     }

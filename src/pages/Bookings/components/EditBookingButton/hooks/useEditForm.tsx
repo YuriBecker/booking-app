@@ -47,7 +47,7 @@ const useEditForm = ({ booking, onEdit, setIsOpen }: Props) => {
       toast.success("Booking reservation updated successfully");
 
       setIsOpen(false);
-    } catch (e) {
+    } catch {
       form.setError("checkIn", {
         type: "manual",
         message: "Property is already booked between these dates",
