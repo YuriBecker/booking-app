@@ -12,12 +12,15 @@ import {
 } from "@/components/ui/card";
 import EditBookingButton from "../EditBookingButton";
 import DeleteBookingButton from "../DeleteBookingButton";
+import { useTranslation } from "react-i18next";
 
 type Props = {
   booking: Booking;
 };
 
 const BookCard = ({ booking }: Props) => {
+  const { t, i18n } = useTranslation();
+  const locale = i18n.resolvedLanguage === "pt-BR" ? "pt-BR" : "en";
   const { data: property } = useGetPropertyQuery(booking.propertyId);
   const { handleEditBooking, handleRemoveBooking } = useBookingHandlers();
 
@@ -42,17 +45,16 @@ const BookCard = ({ booking }: Props) => {
           <div className="space-y-2">
             <h3 className="text-md font-semibold">{property?.title}</h3>
             <p className="text-sm text-muted-foreground">
-              Booking ID: {booking.id}
+              {t("bookings.bookingId", { id: booking.id })}
             </p>
             <p className="text-sm text-muted-foreground">
-              Updated At{" "}
-              {formatDate(booking.updatedAt, {
+              {t("bookings.updatedAt", { date: formatDate(booking.updatedAt, locale, {
                 year: "numeric",
                 month: "numeric",
                 day: "numeric",
                 hour: "numeric",
                 minute: "numeric",
-              })}
+              }) })}
             </p>
           </div>
         </div>
@@ -69,13 +71,13 @@ const BookCard = ({ booking }: Props) => {
               <span className="ml-1">{property?.reviews.totalScore}</span>
             </div>
             <p className="text-sm text-muted-foreground">
-              {property?.reviews.reviewsCount} reviews
+              {t("property.reviews", { count: property?.reviews.reviewsCount ?? 0 })}
             </p>
           </div>
 
           <div className="text-right">
             <div className={cn("text-2xl font-bold text-secondary")}>
-              {formatCurrency(booking.price)}
+              {formatCurrency(booking.price, locale)}
             </div>
           </div>
         </div>
@@ -84,13 +86,13 @@ const BookCard = ({ booking }: Props) => {
           <div className="flex items-center gap-2">
             <CalendarDaysIcon className="h-4 w-4 text-muted-foreground" />
             <span className="text-sm text-muted-foreground font-bold">
-              Check-in: {formatDate(booking.checkIn)}
+              {t("property.checkIn", { date: formatDate(booking.checkIn, locale) })}
             </span>
           </div>
           <div className="flex items-center gap-2">
             <CalendarDaysIcon className="h-4 w-4 text-muted-foreground " />
             <span className="text-sm text-muted-foreground font-bold">
-              Check-out: {formatDate(booking.checkOut)}
+              {t("property.checkOut", { date: formatDate(booking.checkOut, locale) })}
             </span>
           </div>
         </div>

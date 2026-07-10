@@ -21,6 +21,7 @@ import {
 import { Booking } from "@/models/booking";
 import useDrawer from "./hooks/useDrawer";
 import useEditForm from "./hooks/useEditForm";
+import { useTranslation } from "react-i18next";
 
 const EditBookingButton = ({
   onEdit,
@@ -29,6 +30,7 @@ const EditBookingButton = ({
   onEdit: (updatedBooking: Booking) => void;
   booking: Booking;
 }) => {
+  const { t } = useTranslation();
   const { isOpen, setIsOpen } = useDrawer();
 
   const { form, onSubmit } = useEditForm({
@@ -41,7 +43,7 @@ const EditBookingButton = ({
     <Drawer open={isOpen} onOpenChange={setIsOpen}>
       <DrawerTrigger asChild>
         <Button size="lg" className="w-full" data-cy="booking-card-edit-btn">
-          Edit dates
+          {t("bookings.editDates")}
         </Button>
       </DrawerTrigger>
       <DrawerContent data-cy="edit-booking-dialog">
@@ -49,8 +51,8 @@ const EditBookingButton = ({
           <form onSubmit={form.handleSubmit(onSubmit)}>
             <div className="mx-auto w-full max-w-2xl">
               <DrawerHeader className="text-left">
-                <DrawerTitle>Edit booking reservation</DrawerTitle>
-                <DrawerDescription>Booking ID {booking.id}</DrawerDescription>
+                <DrawerTitle>{t("bookings.editTitle")}</DrawerTitle>
+                <DrawerDescription>{t("bookings.editId", { id: booking.id })}</DrawerDescription>
               </DrawerHeader>
               <div className="p-4 grid gap-4">
                 <FormField
@@ -58,10 +60,10 @@ const EditBookingButton = ({
                   name="checkIn"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Check in</FormLabel>
+                      <FormLabel>{t("home.checkIn")}</FormLabel>
                       <FormControl>
                         <DateInput
-                          placeholder="Select a date"
+                          placeholder={t("home.selectCheckIn")}
                           dataCy="check-in-date"
                           {...field}
                         />
@@ -76,10 +78,10 @@ const EditBookingButton = ({
                   name="checkOut"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Check out</FormLabel>
+                      <FormLabel>{t("home.checkOut")}</FormLabel>
                       <FormControl>
                         <DateInput
-                          placeholder="Select a date"
+                          placeholder={t("home.selectCheckOut")}
                           dataCy="check-out-date"
                           {...field}
                         />
@@ -91,10 +93,10 @@ const EditBookingButton = ({
               </div>
               <DrawerFooter>
                 <Button type="submit" data-cy="booking-card-confirm-edit-btn">
-                  Edit
+                  {t("bookings.edit")}
                 </Button>
                 <DrawerClose asChild>
-                  <Button variant="outline">Cancel</Button>
+                  <Button variant="outline">{t("common.cancel")}</Button>
                 </DrawerClose>
               </DrawerFooter>
             </div>

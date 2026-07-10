@@ -1,16 +1,21 @@
 import routerPaths from "@/router/paths";
 import { cn } from "@/utils/tailwind";
-import { Heart, House } from "lucide-react";
+import { Globe2, Heart, House } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import useBookingHandlers from "@/hooks/useBookingHandlers";
 import useFavoriteHandlers from "@/hooks/useFavoriteHandlers";
 import useScrollTracking from "./hooks/useScrollTracking";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import { localeMetadata, setLocale, supportedLocales, type SupportedLocale } from "@/i18n";
+import { useTranslation } from "react-i18next";
 
 const Header = () => {
   const { bookings } = useBookingHandlers();
   const { favorites } = useFavoriteHandlers();
   const { headerRef, isScrolled } = useScrollTracking();
+  const { t, i18n } = useTranslation();
+  const activeLocale: SupportedLocale = i18n.resolvedLanguage === "pt-BR" ? "pt-BR" : "en";
 
   const totalBookings = bookings.length;
   const totalFavorites = favorites.length;
@@ -35,10 +40,45 @@ const Header = () => {
         </Link>
 
         <div className="flex w-full items-center justify-center gap-3 sm:w-auto sm:justify-end">
+          <Popover>
+            <PopoverTrigger asChild>
+              <Button
+                type="button"
+                variant="outline"
+                size="sm"
+                className="px-3"
+                aria-label={t("header.changeLanguage")}
+                data-cy="language-switcher"
+              >
+                <Globe2 className="mr-2 h-4 w-4" aria-hidden="true" />
+                {activeLocale === "en" ? "EN" : "PT"}
+              </Button>
+            </PopoverTrigger>
+            <PopoverContent className="w-52 p-2" align="end">
+              <p className="px-2 py-1 text-sm font-medium">{t("header.language")}</p>
+              <div role="menu" className="flex flex-col gap-1">
+                {supportedLocales.map((locale) => (
+                  <Button
+                    key={locale}
+                    type="button"
+                    role="menuitemradio"
+                    tabIndex={0}
+                    aria-checked={activeLocale === locale}
+                    variant={activeLocale === locale ? "secondary" : "ghost"}
+                    className="justify-start"
+                    onClick={() => void setLocale(locale)}
+                    data-cy={`language-option-${locale}`}
+                  >
+                    {localeMetadata[locale].label}
+                  </Button>
+                ))}
+              </div>
+            </PopoverContent>
+          </Popover>
           <div className="relative inline-flex">
             <Link to={routerPaths.favorites} data-cy="header-favorites-link">
               <Button variant="default" size="sm" className="px-3">
-                <Heart className="mr-2 h-4 w-4" /> Favorites
+                <Heart className="mr-2 h-4 w-4" /> {t("header.favorites")}
               </Button>
             </Link>
 
@@ -55,7 +95,7 @@ const Header = () => {
           <div className="relative inline-flex">
             <Link to={routerPaths.myBookings}>
               <Button variant="default" size="sm" className="px-3">
-                <House className="mr-2 h-4 w-4" /> My Bookings
+                <House className="mr-2 h-4 w-4" /> {t("header.myBookings")}
               </Button>
             </Link>
 

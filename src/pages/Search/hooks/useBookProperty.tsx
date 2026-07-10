@@ -4,6 +4,8 @@ import { Property } from "@/models/property";
 import routerPaths from "@/router/paths";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
+import { useTranslation } from "react-i18next";
+import { isBookingAvailabilityConflict } from "@/utils/booking-errors";
 
 type Props = {
   checkIn: Booking["checkIn"];
@@ -13,6 +15,7 @@ type Props = {
 const useBookProperty = ({ checkIn, checkOut }: Props) => {
   const { handleAddBooking } = useBookingHandlers();
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const handleBookProperty = (property: Property) => {
     try {
@@ -29,13 +32,15 @@ const useBookProperty = ({ checkIn, checkOut }: Props) => {
         price,
       });
 
-      toast.success("Property booked successfully");
+      toast.success(t("toast.booked"));
 
       navigate(routerPaths.myBookings);
     } catch (error) {
-      const message =
-        (error as Error).message ||
-        "An error occurred while booking the property";
+      const message = isBookingAvailabilityConflict(error)
+        ? t("validation.propertyAlreadyBooked")
+        : error instanceof Error && error.message
+          ? error.message
+          : t("toast.bookingError");
 
       toast.error(message);
     }

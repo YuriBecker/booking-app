@@ -22,6 +22,7 @@ import {
   StarIcon,
   User,
 } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 type Props = {
   property: Property;
@@ -36,6 +37,8 @@ const BookDrawerButton = ({
   checkOutDate,
   handleBookProperty,
 }: Props) => {
+  const { t, i18n } = useTranslation();
+  const locale = i18n.resolvedLanguage === "pt-BR" ? "pt-BR" : "en";
   return (
     <Drawer>
       <DrawerTrigger asChild>
@@ -44,7 +47,7 @@ const BookDrawerButton = ({
           className="w-full hover:bg-secondary"
           data-cy="property-card-btn"
         >
-          Book Now
+          {t("property.bookNow")}
         </Button>
       </DrawerTrigger>
       <DrawerContent>
@@ -84,7 +87,7 @@ const BookDrawerButton = ({
                     <span className="ml-1">{property.reviews.totalScore}</span>
                   </div>
                   <p className="text-sm text-muted-foreground">
-                    {property.reviews.reviewsCount} reviews
+                    {t("property.reviews", { count: property.reviews.reviewsCount })}
                   </p>
                 </div>
 
@@ -96,14 +99,12 @@ const BookDrawerButton = ({
                         "line-through text-gray-500 text-md"
                     )}
                   >
-                    {formatCurrency(property.price.perNight)}
+                  {formatCurrency(property.price.perNight, locale)}
                   </div>
                   {property.price.hasPromotion &&
                     property.price.promotionalPricePerNight && (
                       <div className="text-xl font-bold text-secondary">
-                        {formatCurrency(
-                          property.price.promotionalPricePerNight
-                        )}
+                        {formatCurrency(property.price.promotionalPricePerNight, locale)}
                       </div>
                     )}
                 </div>
@@ -113,27 +114,27 @@ const BookDrawerButton = ({
                 <div className="flex items-left gap-4 text-sm text-muted-foreground flex-col ">
                   <div className="flex items-center gap-2">
                     <BedIcon className="w-5 h-5 text-primary" />
-                    <span>{property.numberOfBedrooms} Bedrooms</span>
+                    <span>{t("property.bedrooms", { count: property.numberOfBedrooms })}</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <BedDoubleIcon className="w-5 h-5 text-primary" />
-                    <span>{property.numberOfBedrooms} Bed</span>
+                    <span>{t("property.beds", { count: property.numberOfBeds })}</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <BathIcon className="w-5 h-5 text-primary" />
-                    <span>{property.numberOfBathrooms} Bathroom</span>
+                    <span>{t("property.bathrooms", { count: property.numberOfBathrooms })}</span>
                   </div>
                 </div>
 
                 <div className="flex items-end gap-4 text-sm text-muted-foreground flex-col justify-center">
                   <div className="flex items-center gap-2">
                     <User className="w-5 h-5 text-secondary" />
-                    <span>{property.capacity.adults} Adults</span>
+                    <span>{t("property.adults", { count: property.capacity.adults })}</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <LucideBaby size={15} className="w-5 h-5 text-secondary" />
 
-                    <span>{property.capacity.children} Children</span>
+                    <span>{t("property.children", { count: property.capacity.children })}</span>
                   </div>
                 </div>
               </div>
@@ -142,13 +143,13 @@ const BookDrawerButton = ({
                 <div className="flex items-center gap-2">
                   <CalendarDaysIcon className="h-4 w-4 text-muted-foreground" />
                   <span className="text-sm text-muted-foreground font-bold">
-                    Check-in: {formatDate(checkInDate)}
+                    {t("property.checkIn", { date: formatDate(checkInDate, locale) })}
                   </span>
                 </div>
                 <div className="flex items-center gap-2">
                   <CalendarDaysIcon className="h-4 w-4 text-muted-foreground " />
                   <span className="text-sm text-muted-foreground font-bold">
-                    Check-out: {formatDate(checkOutDate)}
+                    {t("property.checkOut", { date: formatDate(checkOutDate, locale) })}
                   </span>
                 </div>
               </div>
@@ -159,10 +160,10 @@ const BookDrawerButton = ({
               onClick={handleBookProperty}
               data-cy="property-card-reserve-btn"
             >
-              Reserve
+              {t("property.reserve")}
             </Button>
             <DrawerClose asChild>
-              <Button variant="outline">Cancel</Button>
+              <Button variant="outline">{t("common.cancel")}</Button>
             </DrawerClose>
           </DrawerFooter>
         </div>

@@ -1,0 +1,16 @@
+{
+  "app": { "title": "Aplicativo de Reservas" },
+  "common": { "cancel": "Cancelar", "continue": "Continuar", "search": "Buscar", "home": "Início", "close": "Fechar", "breadcrumb": "Navegação estrutural", "more": "Mais" },
+  "header": { "favorites": "Favoritos", "myBookings": "Minhas reservas", "language": "Idioma", "changeLanguage": "Alterar idioma" },
+  "home": {
+    "heading": "Encontre sua próxima estadia em", "location": "Califórnia", "subtitle": "Encontre ofertas em hotéis, casas e muito mais...", "city": "Cidade", "where": "Para onde você vai?", "flexible": "Tenho flexibilidade", "checkIn": "Check-in", "checkOut": "Check-out", "selectCheckIn": "Selecione o check-in", "selectCheckOut": "Selecione o check-out", "adults": "Número de adultos", "children": "Número de crianças", "addAdults": "Adicione adultos", "addChildren": "Adicione crianças", "searchCity": "Buscar cidade...", "noCity": "Nenhuma cidade encontrada."
+  },
+  "validation": { "selectCheckIn": "Selecione uma data de check-in", "selectCheckOut": "Selecione uma data de check-out", "checkoutAfterCheckin": "O check-out deve ser depois do check-in", "childrenNeedAdult": "Crianças devem estar acompanhadas por um adulto", "propertyAlreadyBooked": "A propriedade já está reservada nessas datas" },
+  "search": { "results": "Resultados da busca", "noResults": "Não encontramos nenhuma propriedade disponível", "searchAgain": "Buscar novamente", "sortBy": "Ordenar por", "priceAsc": "Preço: menor para maior", "priceDesc": "Preço: maior para menor", "ratingDesc": "Avaliação: maior para menor" },
+  "property": {
+    "addFavorite": "Adicionar {{title}} aos favoritos", "removeFavorite": "Remover {{title}} dos favoritos", "reviews_one": "{{count}} avaliação", "reviews_other": "{{count}} avaliações", "bedrooms_one": "{{count}} quarto", "bedrooms_other": "{{count}} quartos", "beds_one": "{{count}} cama", "beds_other": "{{count}} camas", "bathrooms_one": "{{count}} banheiro", "bathrooms_other": "{{count}} banheiros", "adults_one": "{{count}} adulto", "adults_other": "{{count}} adultos", "children_one": "{{count}} criança", "children_other": "{{count}} crianças", "bookingUnavailable": "A reserva não está disponível para esta propriedade.", "bookNow": "Reservar agora", "checkIn": "Check-in: {{date}}", "checkOut": "Check-out: {{date}}", "reserve": "Reservar"
+  },
+  "favorites": { "title": "Favoritos", "noResults": "Você ainda não tem propriedades favoritas.", "findStay": "Encontre sua próxima estadia" },
+  "bookings": { "title": "Minhas reservas", "noResults": "Você ainda não fez nenhuma reserva.", "findStay": "Encontre sua próxima estadia", "bookingId": "ID da reserva: {{id}}", "updatedAt": "Atualizada em {{date}}", "editDates": "Editar datas", "editTitle": "Editar reserva", "editId": "ID da reserva {{id}}", "edit": "Editar", "delete": "Excluir", "deleteTitle": "Tem certeza?", "deleteDescription": "Esta ação não pode ser desfeita. Ela excluirá permanentemente a reserva." },
+  "toast": { "genericError": "Ops! Algo deu errado.", "apiError": "Ops! Algo deu errado. Tente novamente mais tarde.", "booked": "Propriedade reservada com sucesso", "bookingError": "Ocorreu um erro ao reservar a propriedade", "bookingUpdated": "Reserva atualizada com sucesso" }
+}

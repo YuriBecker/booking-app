@@ -3,15 +3,16 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { createSearchParams, useNavigate } from "react-router-dom";
 import { z } from "zod";
+import { useTranslation } from "react-i18next";
 
-export const searchFormSchema = z
+export const createSearchFormSchema = (t: (key: string) => string) => z
   .object({
     city: z.string().optional(),
     checkIn: z.date({
-      message: "Select a check in date",
+      message: t("validation.selectCheckIn"),
     }),
     checkOut: z.date({
-      message: "Select a check out date",
+      message: t("validation.selectCheckOut"),
     }),
     numOfAdults: z.coerce.number().min(0),
     numOfChildren: z.coerce.number(),
@@ -20,7 +21,7 @@ export const searchFormSchema = z
     if (checkIn && checkOut && checkIn > checkOut) {
       ctx.addIssue({
         code: "custom",
-        message: "Check out must be after check in",
+        message: t("validation.checkoutAfterCheckin"),
         path: ["checkOut"],
       });
     }
@@ -29,20 +30,21 @@ export const searchFormSchema = z
     if (numOfChildren && numOfAdults < 1) {
       ctx.addIssue({
         code: "custom",
-        message: "Children must be accompanied by an adult",
+        message: t("validation.childrenNeedAdult"),
         path: ["numOfAdults"],
       });
     }
   });
 
-export type SearchFormInput = z.input<typeof searchFormSchema>;
-export type SearchFormValues = z.output<typeof searchFormSchema>;
+export type SearchFormInput = z.input<ReturnType<typeof createSearchFormSchema>>;
+export type SearchFormValues = z.output<ReturnType<typeof createSearchFormSchema>>;
 
 const useSearchForm = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const form = useForm<SearchFormInput, unknown, SearchFormValues>({
-    resolver: zodResolver(searchFormSchema),
+    resolver: zodResolver(createSearchFormSchema(t)),
     defaultValues: {
       numOfAdults: 1,
       numOfChildren: 0,

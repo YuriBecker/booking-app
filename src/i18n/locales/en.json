@@ -1,0 +1,16 @@
+{
+  "app": { "title": "Booking App" },
+  "common": { "cancel": "Cancel", "continue": "Continue", "search": "Search", "home": "Home", "close": "Close", "breadcrumb": "Breadcrumb", "more": "More" },
+  "header": { "favorites": "Favorites", "myBookings": "My Bookings", "language": "Language", "changeLanguage": "Change language" },
+  "home": {
+    "heading": "Find your next stay at", "location": "California", "subtitle": "Search deals on hotels, homes, and much more...", "city": "City", "where": "Where are you going?", "flexible": "I'm flexible", "checkIn": "Check in", "checkOut": "Check out", "selectCheckIn": "Select a check in", "selectCheckOut": "Select a check out", "adults": "Number of adults", "children": "Number of children", "addAdults": "Add adults", "addChildren": "Add children", "searchCity": "Search city...", "noCity": "No city found."
+  },
+  "validation": { "selectCheckIn": "Select a check in date", "selectCheckOut": "Select a check out date", "checkoutAfterCheckin": "Check out must be after check in", "childrenNeedAdult": "Children must be accompanied by an adult", "propertyAlreadyBooked": "Property is already booked between these dates" },
+  "search": { "results": "Search Results", "noResults": "Sorry, we couldn't find any available property", "searchAgain": "Search again", "sortBy": "Sort by", "priceAsc": "Price: low to high", "priceDesc": "Price: high to low", "ratingDesc": "Rating: high to low" },
+  "property": {
+    "addFavorite": "Add {{title}} to favorites", "removeFavorite": "Remove {{title}} from favorites", "reviews_one": "{{count}} review", "reviews_other": "{{count}} reviews", "bedrooms_one": "{{count}} Bedroom", "bedrooms_other": "{{count}} Bedrooms", "beds_one": "{{count}} Bed", "beds_other": "{{count}} Beds", "bathrooms_one": "{{count}} Bathroom", "bathrooms_other": "{{count}} Bathrooms", "adults_one": "{{count}} Adult", "adults_other": "{{count}} Adults", "children_one": "{{count}} Child", "children_other": "{{count}} Children", "bookingUnavailable": "Booking is unavailable for this property.", "bookNow": "Book Now", "checkIn": "Check-in: {{date}}", "checkOut": "Check-out: {{date}}", "reserve": "Reserve"
+  },
+  "favorites": { "title": "Favorites", "noResults": "You don't have any favorite properties yet.", "findStay": "Find your next stay" },
+  "bookings": { "title": "My Bookings", "noResults": "You haven't made any booking reservations yet.", "findStay": "Find your next stay", "bookingId": "Booking ID: {{id}}", "updatedAt": "Updated at {{date}}", "editDates": "Edit dates", "editTitle": "Edit booking reservation", "editId": "Booking ID {{id}}", "edit": "Edit", "delete": "Delete", "deleteTitle": "Are you absolutely sure?", "deleteDescription": "This action cannot be undone. This will permanently delete the booking reservation." },
+  "toast": { "genericError": "Oops! Something went wrong.", "apiError": "Oops! Something went wrong. Please try again later.", "booked": "Property booked successfully", "bookingError": "An error occurred while booking the property", "bookingUpdated": "Booking reservation updated successfully" }
+}

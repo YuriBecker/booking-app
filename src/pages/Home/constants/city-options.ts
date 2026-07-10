@@ -1,7 +1,9 @@
-export const selectCityOptions = [
+import type { TFunction } from "i18next";
+
+export const getCityOptions = (t: TFunction) => [
   {
     value: "",
-    label: "I'm flexible",
+    label: t("home.flexible"),
   },
   {
     value: "Los Angeles",

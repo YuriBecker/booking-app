@@ -10,6 +10,7 @@ import { cn } from "@/utils/tailwind";
 import { formatLongDate } from "@/utils/dates";
 import type { OnSelectHandler } from "react-day-picker";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 interface Props {
   onChange: OnSelectHandler<Date | undefined>;
@@ -20,6 +21,7 @@ interface Props {
 
 export function DateInput({ placeholder, value, onChange, dataCy }: Props) {
   const [isCalendarOpen, setIsCalendarOpen] = useState(false);
+  const { i18n } = useTranslation();
 
   return (
     <Popover open={isCalendarOpen} onOpenChange={setIsCalendarOpen}>
@@ -33,7 +35,7 @@ export function DateInput({ placeholder, value, onChange, dataCy }: Props) {
           data-cy={dataCy}
         >
           <CalendarIcon className="mr-2 h-4 w-4" />
-          {value ? formatLongDate(value) : <span>{placeholder}</span>}
+          {value ? formatLongDate(value, i18n.resolvedLanguage === "pt-BR" ? "pt-BR" : "en") : <span>{placeholder}</span>}
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-auto p-0">

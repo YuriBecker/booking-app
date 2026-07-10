@@ -10,8 +10,10 @@ import {
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
 import { Button } from "@/components/ui/button";
+import { useTranslation } from "react-i18next";
 
 const DeleteBookingButton = ({ onDelete }: { onDelete: () => void }) => {
+  const { t } = useTranslation();
   return (
     <AlertDialog>
       <AlertDialogTrigger asChild>
@@ -21,24 +23,23 @@ const DeleteBookingButton = ({ onDelete }: { onDelete: () => void }) => {
           className="w-full"
           data-cy="booking-card-delete-btn"
         >
-          Delete
+          {t("bookings.delete")}
         </Button>
       </AlertDialogTrigger>
       <AlertDialogContent>
         <AlertDialogHeader>
-          <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+          <AlertDialogTitle>{t("bookings.deleteTitle")}</AlertDialogTitle>
           <AlertDialogDescription>
-            This action cannot be undone. This will permanently delete the
-            booking reservation
+            {t("bookings.deleteDescription")}
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
-          <AlertDialogCancel>Cancel</AlertDialogCancel>
+          <AlertDialogCancel>{t("common.cancel")}</AlertDialogCancel>
           <AlertDialogAction
             onClick={onDelete}
             data-cy="booking-card-confirm-delete-btn"
           >
-            Continue
+            {t("common.continue")}
           </AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>

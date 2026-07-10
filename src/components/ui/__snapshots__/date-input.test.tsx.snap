@@ -38,7 +38,7 @@ exports[`DateInput component > renders correctly 1`] = `
         d="M3 10h18"
       />
     </svg>
-    February 1st, 2024
+    February 1, 2024
   </button>
 </DocumentFragment>
 `;

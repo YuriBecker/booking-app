@@ -16,7 +16,8 @@ import type {
   SearchFormInput,
   SearchFormValues,
 } from "../../hooks/useSearchForm";
-import { selectCityOptions } from "../../constants/city-options";
+import { getCityOptions } from "../../constants/city-options";
+import { useTranslation } from "react-i18next";
 
 type Props = {
   form: UseFormReturn<SearchFormInput, unknown, SearchFormValues>;
@@ -24,6 +25,9 @@ type Props = {
 };
 
 const SearchForm = ({ form, onSubmit }: Props) => {
+  const { t } = useTranslation();
+  const cityOptions = getCityOptions(t);
+
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
@@ -32,11 +36,13 @@ const SearchForm = ({ form, onSubmit }: Props) => {
           name="city"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="text-secondary-foreground">City</FormLabel>
+              <FormLabel className="text-secondary-foreground">{t("home.city")}</FormLabel>
               <FormControl>
                 <SelectField
-                  placeholder="Where are you going?"
-                  options={selectCityOptions}
+                  placeholder={t("home.where")}
+                  searchPlaceholder={t("home.searchCity")}
+                  emptyMessage={t("home.noCity")}
+                  options={cityOptions}
                   {...field}
                 />
               </FormControl>
@@ -51,11 +57,11 @@ const SearchForm = ({ form, onSubmit }: Props) => {
           render={({ field }) => (
             <FormItem>
               <FormLabel className="text-secondary-foreground">
-                Check in
+                {t("home.checkIn")}
               </FormLabel>
               <FormControl>
                 <DateInput
-                  placeholder="Select a check in"
+                  placeholder={t("home.selectCheckIn")}
                   dataCy="check-in-date"
                   {...field}
                 />
@@ -71,11 +77,11 @@ const SearchForm = ({ form, onSubmit }: Props) => {
           render={({ field }) => (
             <FormItem>
               <FormLabel className="text-secondary-foreground">
-                Check out
+                {t("home.checkOut")}
               </FormLabel>
               <FormControl>
                 <DateInput
-                  placeholder="Select a check out"
+                  placeholder={t("home.selectCheckOut")}
                   dataCy="check-out-date"
                   {...field}
                 />
@@ -92,12 +98,12 @@ const SearchForm = ({ form, onSubmit }: Props) => {
             render={({ field }) => (
               <FormItem>
                 <FormLabel className="text-secondary-foreground">
-                  Number of adults
+                  {t("home.adults")}
                 </FormLabel>
                 <FormControl>
                   <Input
                     type="number"
-                    placeholder="Add adults"
+                    placeholder={t("home.addAdults")}
                     {...field}
                     value={
                       typeof field.value === "string" ||
@@ -118,12 +124,12 @@ const SearchForm = ({ form, onSubmit }: Props) => {
             render={({ field }) => (
               <FormItem>
                 <FormLabel className="text-secondary-foreground">
-                  Number of children
+                  {t("home.children")}
                 </FormLabel>
                 <FormControl>
                   <Input
                     type="number"
-                    placeholder="Add children"
+                    placeholder={t("home.addChildren")}
                     {...field}
                     value={
                       typeof field.value === "string" ||
@@ -141,7 +147,7 @@ const SearchForm = ({ form, onSubmit }: Props) => {
 
         <Button type="submit" className="w-full">
           <Search className="mr-2" height={20} />
-          <span className="text-lg">Search</span>
+          <span className="text-lg">{t("common.search")}</span>
         </Button>
       </form>
     </Form>

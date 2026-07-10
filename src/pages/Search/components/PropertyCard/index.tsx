@@ -18,6 +18,7 @@ import { Booking } from "@/models/booking";
 import BookDrawerButton from "../BookDrawerButton";
 import { Button } from "@/components/ui/button";
 import useFavoriteHandlers from "@/hooks/useFavoriteHandlers";
+import { useTranslation } from "react-i18next";
 
 type Props = {
   property: Property;
@@ -34,13 +35,15 @@ const PropertyCard = ({
   handleBookProperty,
   showBookButton = true,
 }: Props) => {
+  const { t, i18n } = useTranslation();
+  const locale = i18n.resolvedLanguage === "pt-BR" ? "pt-BR" : "en";
   const { isFavorite, handleToggleFavorite } = useFavoriteHandlers();
   const propertyIsFavorite = isFavorite(property.id);
   const canBookProperty = Boolean(showBookButton && checkIn && checkOut);
 
   const favoriteButtonLabel = propertyIsFavorite
-    ? `Remove ${property.title} from favorites`
-    : `Add ${property.title} to favorites`;
+    ? t("property.removeFavorite", { title: property.title })
+    : t("property.addFavorite", { title: property.title });
 
   return (
     <Card
@@ -97,7 +100,7 @@ const PropertyCard = ({
               <span className="ml-1">{property.reviews.totalScore}</span>
             </div>
             <p className="text-sm text-muted-foreground">
-              {property.reviews.reviewsCount} reviews
+              {t("property.reviews", { count: property.reviews.reviewsCount })}
             </p>
           </div>
 
@@ -109,12 +112,12 @@ const PropertyCard = ({
                   "line-through text-gray-500 text-md"
               )}
             >
-              {formatCurrency(property.price.perNight)}
+              {formatCurrency(property.price.perNight, locale)}
             </div>
             {property.price.hasPromotion &&
               property.price.promotionalPricePerNight && (
                 <div className="text-xl font-bold text-secondary">
-                  {formatCurrency(property.price.promotionalPricePerNight)}
+                  {formatCurrency(property.price.promotionalPricePerNight, locale)}
                 </div>
               )}
           </div>
@@ -123,15 +126,15 @@ const PropertyCard = ({
         <div className="flex items-left gap-4 text-sm text-muted-foreground flex-col md:items-center md:flex-row justify-between">
           <div className="flex items-center gap-2">
             <BedIcon className="w-5 h-5" />
-            <span>{property.numberOfBedrooms} Bedrooms</span>
+            <span>{t("property.bedrooms", { count: property.numberOfBedrooms })}</span>
           </div>
           <div className="flex items-center gap-2">
             <BedDoubleIcon className="w-5 h-5" />
-            <span>{property.numberOfBedrooms} Bed</span>
+            <span>{t("property.beds", { count: property.numberOfBeds })}</span>
           </div>
           <div className="flex items-center gap-2">
             <BathIcon className="w-5 h-5" />
-            <span>{property.numberOfBathrooms} Bathroom</span>
+            <span>{t("property.bathrooms", { count: property.numberOfBathrooms })}</span>
           </div>
         </div>
       </CardContent>
@@ -146,7 +149,7 @@ const PropertyCard = ({
           />
         ) : (
           <p className="text-sm text-muted-foreground">
-            Booking is unavailable for this property.
+            {t("property.bookingUnavailable")}
           </p>
         )}
       </CardFooter>

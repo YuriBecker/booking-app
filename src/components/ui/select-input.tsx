@@ -26,6 +26,8 @@ interface Props
   onChange: (value: string) => void;
   options: Option[];
   placeholder?: string;
+  searchPlaceholder?: string;
+  emptyMessage?: string;
 }
 
 export function SelectField({
@@ -34,6 +36,8 @@ export function SelectField({
   onChange,
   options,
   placeholder,
+  searchPlaceholder = "Search...",
+  emptyMessage = "No options found.",
 }: Props) {
   const [open, setOpen] = React.useState(false);
   const generatedId = React.useId();
@@ -62,8 +66,8 @@ export function SelectField({
 
       <PopoverContent className="w-[200px] p-0">
         <Command>
-          <CommandInput placeholder="Search city..." />
-          <CommandEmpty>No city found.</CommandEmpty>
+          <CommandInput placeholder={searchPlaceholder} />
+          <CommandEmpty>{emptyMessage}</CommandEmpty>
           <CommandGroup>
             <CommandList id={listboxId}>
               {options.map((city) => (

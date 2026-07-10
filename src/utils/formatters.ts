@@ -1,22 +1,32 @@
+import type { SupportedLocale } from "@/i18n";
+
 export const formatCurrency = (
   value: number,
+  localeOrOptions: SupportedLocale | Intl.NumberFormatOptions = "en",
   options?: Intl.NumberFormatOptions
 ) => {
-  return new Intl.NumberFormat("en-US", {
+  const locale = typeof localeOrOptions === "string" ? localeOrOptions : "en";
+  const formatOptions = typeof localeOrOptions === "string" ? options : localeOrOptions;
+
+  return new Intl.NumberFormat(locale, {
     style: "currency",
     currency: "USD",
-    ...options,
+    ...formatOptions,
   }).format(value);
 };
 
 export const formatDate = (
   date: string | number | Date,
+  localeOrOptions: SupportedLocale | Intl.DateTimeFormatOptions = "en",
   options?: Intl.DateTimeFormatOptions
 ) => {
-  return new Intl.DateTimeFormat("en-US", {
+  const locale = typeof localeOrOptions === "string" ? localeOrOptions : "en";
+  const formatOptions = typeof localeOrOptions === "string" ? options : localeOrOptions;
+
+  return new Intl.DateTimeFormat(locale, {
     year: "numeric",
     month: "long",
     day: "numeric",
-    ...options,
+    ...formatOptions,
   }).format(new Date(date));
 };

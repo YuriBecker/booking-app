@@ -6,6 +6,7 @@ import {
   removeBooking,
 } from "@/store/slices/bookings";
 import { removeTimeFromDate } from "@/utils/dates";
+import { BOOKING_AVAILABILITY_CONFLICT } from "@/utils/booking-errors";
 import { useDispatch, useSelector } from "react-redux";
 
 const useBookingHandlers = () => {
@@ -55,7 +56,7 @@ const useBookingHandlers = () => {
     price: Booking["price"];
   }) => {
     if (!verifyIfPropertyIsAvailable({ propertyId, checkIn, checkOut })) {
-      throw new Error("Property is already booked between these dates");
+      throw new Error(BOOKING_AVAILABILITY_CONFLICT);
     }
 
     const checkInWithoutTime = removeTimeFromDate(
@@ -93,7 +94,7 @@ const useBookingHandlers = () => {
         bookings: filteredBookings,
       })
     ) {
-      throw new Error("Property is already booked between these dates");
+      throw new Error(BOOKING_AVAILABILITY_CONFLICT);
     }
 
     const checkInWithoutTime = removeTimeFromDate(

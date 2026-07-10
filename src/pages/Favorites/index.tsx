@@ -9,9 +9,11 @@ import { useNavigate } from "react-router-dom";
 import PropertyCard from "../Search/components/PropertyCard";
 import useBookProperty from "../Search/hooks/useBookProperty";
 import FavoritesBreadcrumb from "./components/Breadcrumb";
+import { useTranslation } from "react-i18next";
 
 const FavoritesPage = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const { favorites } = useFavoriteHandlers();
   const [checkInDate, setCheckInDate] = useState(new Date());
   const [checkOutDate, setCheckOutDate] = useState(addDays(new Date(), 1));
@@ -50,9 +52,9 @@ const FavoritesPage = () => {
     return (
       <NoData
         className="bg-background container"
-        buttonLabel="Find your next stay"
+        buttonLabel={t("favorites.findStay")}
         onClick={() => navigate(routerPaths.home)}
-        description="You don't have any favorite properties yet."
+        description={t("favorites.noResults")}
       />
     );
   }
@@ -66,21 +68,21 @@ const FavoritesPage = () => {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-xl mb-8">
         <div>
-          <p className="text-sm font-medium text-secondary mb-2">Check in</p>
+          <p className="text-sm font-medium text-secondary mb-2">{t("home.checkIn")}</p>
           <DateInput
             value={checkInDate}
             onChange={handleCheckInChange}
-            placeholder="Select a check in"
+            placeholder={t("home.selectCheckIn")}
             dataCy="favorites-check-in-date"
           />
         </div>
 
         <div>
-          <p className="text-sm font-medium text-secondary mb-2">Check out</p>
+          <p className="text-sm font-medium text-secondary mb-2">{t("home.checkOut")}</p>
           <DateInput
             value={checkOutDate}
             onChange={handleCheckOutChange}
-            placeholder="Select a check out"
+            placeholder={t("home.selectCheckOut")}
             dataCy="favorites-check-out-date"
           />
         </div>

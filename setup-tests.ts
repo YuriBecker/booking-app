@@ -1,6 +1,7 @@
 import "@testing-library/jest-dom/vitest";
 import { server } from "./src/mocks/node";
 import { vi } from "vitest";
+import i18n from "./src/i18n";
 
 beforeAll(() => {
   server.listen();
@@ -8,6 +9,7 @@ beforeAll(() => {
 
 afterEach(() => {
   server.resetHandlers();
+  void i18n.changeLanguage("en");
 });
 
 afterAll(() => {

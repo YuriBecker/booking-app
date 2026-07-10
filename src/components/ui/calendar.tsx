@@ -3,6 +3,8 @@ import { DayPicker } from "react-day-picker";
 
 import { cn } from "@/utils/tailwind";
 import { buttonVariants } from "@/components/ui/button";
+import { enUS, ptBR } from "react-day-picker/locale";
+import { useTranslation } from "react-i18next";
 
 export type CalendarProps = React.ComponentProps<typeof DayPicker>;
 
@@ -12,8 +14,13 @@ function Calendar({
   showOutsideDays = true,
   ...props
 }: CalendarProps) {
+  const { i18n } = useTranslation();
+  const locale = i18n.resolvedLanguage === "pt-BR" ? ptBR : enUS;
+
   return (
     <DayPicker
+      locale={locale}
+      lang={i18n.resolvedLanguage}
       showOutsideDays={showOutsideDays}
       className={cn("relative p-3", className)}
       classNames={{

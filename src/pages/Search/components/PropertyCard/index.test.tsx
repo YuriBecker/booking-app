@@ -79,7 +79,7 @@ describe("PropertyCard component", () => {
 
     // Assert that the number of beds is rendered correctly
     expect(
-      screen.getByText(`${promotionalPropertyMock.numberOfBeds} Bed`)
+      screen.getByText(`${promotionalPropertyMock.numberOfBeds} Beds`)
     ).toBeVisible();
 
     // Assert that the number of bathrooms is rendered correctly
@@ -161,7 +161,7 @@ describe("PropertyCard component", () => {
 
     // Assert that the number of beds is rendered correctly
     expect(
-      screen.getByText(`${notPromotionalPropertyMock.numberOfBeds} Bed`)
+      screen.getByText(`${notPromotionalPropertyMock.numberOfBeds} Beds`)
     ).toBeVisible();
 
     // Assert that the number of bathrooms is rendered correctly

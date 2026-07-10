@@ -10,6 +10,7 @@ import { SORT_OPTIONS, SortOption } from "./utils/sortProperties";
 import { Button } from "@/components/ui/button";
 import { ArrowDownIcon, ArrowUpIcon, StarIcon } from "lucide-react";
 import { cn } from "@/utils/tailwind";
+import { useTranslation } from "react-i18next";
 
 const SORT_ICON_BY_OPTION = {
   [SortOption.PRICE_ASC]: ArrowDownIcon,
@@ -17,14 +18,9 @@ const SORT_ICON_BY_OPTION = {
   [SortOption.RATING_DESC]: StarIcon,
 };
 
-const SORT_DESCRIPTION_BY_OPTION = {
-  [SortOption.PRICE_ASC]: "Price: low to high",
-  [SortOption.PRICE_DESC]: "Price: high to low",
-  [SortOption.RATING_DESC]: "Rating: high to low",
-};
-
 const SearchPage = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const {
     isLoading,
@@ -51,9 +47,9 @@ const SearchPage = () => {
     return (
       <NoData
         className="bg-background container"
-        buttonLabel="Search again"
+        buttonLabel={t("search.searchAgain")}
         onClick={() => navigate(routerPaths.home)}
-        description="Sorry, we couldn't find any available property"
+        description={t("search.noResults")}
       />
     );
   }
@@ -66,7 +62,7 @@ const SearchPage = () => {
 
           <div className="flex w-full flex-col gap-2 sm:w-auto">
             <span id="search-results-sort-label" className="text-sm font-medium">
-              Sort by
+              {t("search.sortBy")}
             </span>
             <div
               data-cy="search-results-sort"
@@ -81,7 +77,7 @@ const SearchPage = () => {
                     role="radio"
                     tabIndex={0}
                     aria-checked={sortOption === option.value}
-                    aria-label={SORT_DESCRIPTION_BY_OPTION[option.value]}
+                    aria-label={t(`search.${option.value === SortOption.PRICE_ASC ? "priceAsc" : option.value === SortOption.PRICE_DESC ? "priceDesc" : "ratingDesc"}`)}
                     aria-describedby={`search-results-sort-${option.value}-tooltip`}
                     data-cy={`search-results-sort-${option.value}`}
                     variant={
@@ -106,7 +102,7 @@ const SearchPage = () => {
                     role="tooltip"
                     className="pointer-events-none absolute right-0 top-full z-20 mt-2 hidden w-max max-w-48 rounded-md bg-foreground px-2 py-1 text-xs text-background shadow-md group-focus-within:block group-hover:block"
                   >
-                    {SORT_DESCRIPTION_BY_OPTION[option.value]}
+                    {t(`search.${option.value === SortOption.PRICE_ASC ? "priceAsc" : option.value === SortOption.PRICE_DESC ? "priceDesc" : "ratingDesc"}`)}
                   </span>
                 </div>
               ))}
